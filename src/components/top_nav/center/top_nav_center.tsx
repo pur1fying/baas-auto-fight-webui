@@ -1,6 +1,7 @@
 import { Stack } from "@primer/react";
 import { SingleInfo } from "./current_page_info";
 import CurrentPageInfo from "./current_page_info";
+import SearchButton from "./search_region/search_module";
 
 interface Props {
     PageInfo: SingleInfo[];
@@ -20,8 +21,9 @@ function TopNavCenter({ PageInfo }: Props) {
                 paddingLeft: "0px"
             }}
         >
-            
             <CurrentPageInfo items={PageInfo} />
+            
+            <SearchButton/>
         </Stack>
     );
 }

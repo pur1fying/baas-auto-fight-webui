@@ -10,6 +10,7 @@ interface OpenMenuButtonProps {
 function OpenMenuButton({ onClick }: OpenMenuButtonProps) {
   return (
     <IconButton
+      className = "!bg-[var(--bgColor-default)]"
       icon={ThreeBarsIcon}
       aria-label="Open menu"
       onClick={onClick}
