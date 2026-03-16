@@ -14,22 +14,17 @@ const breadcrumbs_default_style = `
     !text-[var(--fgColor-default)]
     hover:!no-underline
     hover:!bg-[var(--bgColor-disabled)]
-    min-w-[3ch]
     leading-[var(--base-size-24)]
     rounded-[var(--borderRadius-medium)]
     px-[var(--base-size-6)]
     py-[var(--base-size-4)]
-    items-center
-    h-full
-    inline-flex
-
 `;
 
 function CurrentPageInfo({ items }: Props) {
     if (!items || items.length === 0) return null;
 
     return (
-        <Breadcrumbs>
+        <Breadcrumbs overflow="menu">
             {items.map((item, index) =>
                 index === items.length - 1
                     ? gen_breadcrumbs_last_item(item, index)
@@ -56,7 +51,7 @@ function gen_breadcrumbs_last_item(item: SingleInfo, key: number) {
         <Breadcrumbs.Item
             key={key}
             href={item.href}
-            className={`${breadcrumbs_default_style} font-bold`}
+            className={`${breadcrumbs_default_style} font-bold `}
         >
             {item.label}
         </Breadcrumbs.Item>

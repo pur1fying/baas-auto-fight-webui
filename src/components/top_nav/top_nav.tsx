@@ -11,7 +11,12 @@ interface Props {
 
 function TopNavBar ({PageInfo}: Props) {
     return (
-        <Stack direction="horizontal" gap="none" padding="none" className="top-nav-bar">
+        <Stack
+            className="top-nav-bar"
+            direction="horizontal"
+            gap="none"
+            padding="none"
+            justify="space-between">
             <TopNavLeft/>
             <TopNavCenter PageInfo={PageInfo}/>
             <TopNavRight/>

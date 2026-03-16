@@ -6,7 +6,7 @@ function RepoButton() {
     return (
         <>
             <IconButton 
-                className = "!bg-[var(--bgColor-default)]"
+                className = "!bg-[var(--bgColor-default)] !hidden sm:!flex"
                 size = "medium"
                 aria-label="Repositories"
                 icon={RepoIcon}

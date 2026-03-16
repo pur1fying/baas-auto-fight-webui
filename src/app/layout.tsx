@@ -1,7 +1,11 @@
-import "./globals.css"
+import React from "react";
+
 import '@primer/css/dist/primer.css'
 import '@primer/primitives/dist/css/base/motion/motion.css'
 import { BaseStyles, ThemeProvider } from "@primer/react";
+
+import "./globals.css"
+
 
 export default function RootLayout({
     children,
@@ -9,7 +13,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <ThemeProvider colorMode="auto" nightScheme="dark_dimmed">
+                <ThemeProvider colorMode="auto" nightScheme="dark">
                     <BaseStyles>
                         {children}
                     </BaseStyles>

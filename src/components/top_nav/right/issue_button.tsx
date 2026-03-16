@@ -7,15 +7,13 @@ function IssueButton() {
         <>
             <IconButton 
                 as = "button"
-                className = "!bg-[var(--bgColor-default)]"
+                className = "!bg-[var(--bgColor-default)] !hidden sm:!flex"
                 size="medium"
                 icon={IssueOpenedIcon}
                 aria-label="Issue"
                 description='Issues'
                 keybindingHint='G D'
-            >
-                {/* <IssueOpenedIcon/> */}
-            </IconButton>
+            />
         </>
     );
 }

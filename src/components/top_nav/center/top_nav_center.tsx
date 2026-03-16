@@ -10,16 +10,11 @@ interface Props {
 function TopNavCenter({ PageInfo }: Props) {
     return (
         <Stack
-            className="top-nav-center"
+            className="top-nav-center w-full mt-3"
             direction="horizontal"
-            gap="condensed"
-            padding="normal"
-            justify="start"
+            justify="space-between"
             warp="nowrap"
             align="stretch"
-            style= {{
-                paddingLeft: "0px"
-            }}
         >
             <CurrentPageInfo items={PageInfo} />
             
