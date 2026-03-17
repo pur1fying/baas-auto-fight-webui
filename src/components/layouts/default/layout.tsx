@@ -3,29 +3,32 @@ import DefaultLayoutHeader from "@/components/layouts/default/header";
 import DefaultLayoutSidebar from "@/components/layouts/default/sidebar";
 import DefaultLayoutFooter from "@/components/layouts/default/footer";
 import DefaultLayoutContent from "@/components/layouts/default/content";
+import ImageBackground from "@/components/background/imgae_background";
 
 interface Props {
-  header  ? : React.ReactNode;
-  sidebar ? : React.ReactNode;
-  content ? : React.ReactNode;
-  footer  ? : React.ReactNode;
+    header  ? : React.ReactNode;
+    sidebar ? : React.ReactNode;
+    content ? : React.ReactNode;
+    footer  ? : React.ReactNode;
 }
 
-function DefaultLayout({ header, sidebar, content, footer }: Props) {
+function DefaultLayout({header, sidebar, content, footer}: Props) {
     return (
-        <div className="min-h-screen flex flex-col">
-            <DefaultLayoutHeader header={header}/>
+        <ImageBackground>
+            <div className="min-h-screen flex flex-col">
+                <DefaultLayoutHeader header={header}/>
 
-            <div className="flex flex-1">
-                <DefaultLayoutSidebar sidebar={sidebar}/>
+                <div className="flex flex-1">
+                    <DefaultLayoutSidebar sidebar={sidebar}/>
 
-                <div className="flex flex-col">
-                    <DefaultLayoutContent content={content}/>
-                    <DefaultLayoutFooter footer={footer}/>
+                    <div className="flex flex-col">
+                        <DefaultLayoutContent content={content}/>
+                        <DefaultLayoutFooter footer={footer}/>
+                    </div>
                 </div>
             </div>
-        </div>
-  );
+        </ImageBackground>
+    );
 }
 
 export default DefaultLayout;

@@ -13,7 +13,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <ThemeProvider colorMode="auto" nightScheme="dark">
+                <ThemeProvider colorMode="light" nightScheme="dark">
                     <BaseStyles>
                         {children}
                     </BaseStyles>

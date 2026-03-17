@@ -5,7 +5,7 @@ import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overl
 import React from "react";
 import {
     ArrowSwitchIcon,
-    GearIcon,
+    GearIcon, LogIcon, MeterIcon,
     PaintbrushIcon,
     PersonIcon,
     RepoIcon,
@@ -94,6 +94,11 @@ function UserAvatarButtonOverlayOptions() {
 
                     <ActionList.Divider/>
 
+                    <UserAvatarButtonOverlayLog/>
+                    <UserAvatarButtonOverlayDataMonitor/>
+
+                    <ActionList.Divider/>
+
                     <UserAvatarButtonOverlaySignOut/>
                 </ActionList>
             </div>
@@ -170,10 +175,33 @@ function UserAvatarButtonOverlayAppearance() {
             <ActionList.LeadingVisual>
                 <PaintbrushIcon/>
             </ActionList.LeadingVisual>
-            Appearance Settings
+            Appearance
         </ActionList.Item>
     )
 }
+
+function UserAvatarButtonOverlayLog() {
+    return (
+        <ActionList.Item>
+            <ActionList.LeadingVisual>
+                <LogIcon/>
+            </ActionList.LeadingVisual>
+            BAAS Webui Log
+        </ActionList.Item>
+    )
+}
+
+function UserAvatarButtonOverlayDataMonitor() {
+    return (
+        <ActionList.Item>
+            <ActionList.LeadingVisual>
+                <MeterIcon/>
+            </ActionList.LeadingVisual>
+            Data Monitor
+        </ActionList.Item>
+    )
+}
+
 
 
 function UserAvatarButtonOverlaySignOut() {

@@ -2,6 +2,7 @@
 import TopNavBar from '@/components/top_nav/top_nav';
 import React from 'react'
 import DefaultLayout from '@/components/layouts/default/layout'
+import WorkflowEditor from "@/components/BAAS/workflow/editor/workflow_editor";
 
 const PageInfo = [
     { 
@@ -14,17 +15,13 @@ const PageInfo = [
     }
 ];
 
-function Nav() {
-    return <TopNavBar PageInfo={PageInfo}/>
-}
-
 export default function Home() {
     return (
         <>
             <DefaultLayout
-                header={<Nav/>}
+                header={<TopNavBar PageInfo={PageInfo}/>}
                 sidebar={<div className="text-center text-blue-500"> this is sidebar </div>}
-                content={<div className="text-center"> this is content </div>}
+                content={<div className="text-center"> <WorkflowEditor/> </div>}
                 footer={<div className="text-center"> this is footer </div>}>
             </DefaultLayout>
         </>
