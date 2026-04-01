@@ -15,49 +15,51 @@ function getLevelColor(level: LogLevel): string {
         case 'info'     : return 'text-[var(--fgColor-accent)]'
         case 'warn'     : return 'text-[var(--fgColor-attention)]'
         case 'error'    : return 'text-[var(--fgColor-danger)]'
-        case 'critical' : return 'text-[var(--fgColor-done)]'
+        case 'fatal'    : return 'text-[var(--fgColor-done)]'
     }
 }
 
-const level_width = 8   // 控制 INFO / CRITICAL 对齐
-const tag_width = 20     // 你要求的 tag 宽度
+const level_width = 5
+const tag_width = 20
 
 function padRight(str: string, width: number) {
     return str.padEnd(width, ' ')
 }
 
 const LogRow = ({ log, index }: Props) => {
-    const logNumber = index + 1
-    const formattedNumber = String(logNumber).padStart(log_index_width, ' ')
-    const timestampStr = formatTimestamp(log.timestamp)
-    const levelColor = getLevelColor(log.level)
+    const logNumber = index + 1;
+    const formattedNumber = String(logNumber).padStart(log_index_width, ' ');
+    const timestampStr = formatTimestamp(log.timestamp);
+    const levelColor = getLevelColor(log.level);
 
-    const levelStr = padRight(log.level.toUpperCase(), level_width)
-    const tagStr = padRight(log.tag, tag_width)
+    const levelStr = padRight(log.level.toUpperCase(), level_width);
+    const tagStr = padRight(log.tag, tag_width);
 
     return (
-        <div className="font-mono whitespace-pre">
+        <div className="flex items-start font-mono whitespace-pre-wrap break-all">
 
-            <span className="inline-block text-right mr-2 text-gray-500">
-                {formattedNumber}
-            </span>
+            <div className="flex-shrink-0 flex">
+                <span className="inline-block text-right mr-2 text-[var(--fgColor-muted)]">
+                    {formattedNumber}
+                </span>
 
-            <span className="text-gray-400 mr-2">
-                [{timestampStr}]
-            </span>
+                <span className="text-[var(--fgColor-muted)]mr-2">
+                    [{timestampStr}]
+                </span>
 
-            <span className={`mr-2`}>
-                {tagStr}
-            </span>
+                <span className="mr-2">
+                    {tagStr}
+                </span>
 
-            <span className={`${levelColor} mr-2`}>
-                {levelStr}
-            </span>
+                <span className={`${levelColor} mr-2`}>
+                    {levelStr}
+                </span>
+            </div>
 
-            <span className={`${levelColor}`}>
+            <div className={`${levelColor} flex-1`}>
                 {log.message}
-            </span>
+            </div>
         </div>
-    )
-}
+    );
+};
 export default LogRow;

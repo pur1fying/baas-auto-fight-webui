@@ -1,12 +1,11 @@
 'use client';
 
-import { useLoggerStore } from '@/store/loggerStore';
-import { LogLevel } from '@/types/log';
+import {useLoggerStore} from '@/store/loggerStore';
+import {LogLevel} from '@/types/log';
 
-const { addLog } = useLoggerStore.getState();
+const {addLog} = useLoggerStore.getState();
 
 const hr_line_length = 50;
-
 const hr_line = '-'.repeat(hr_line_length);
 
 function build_hr_message(message: string) {
@@ -18,24 +17,39 @@ function build_hr_message(message: string) {
     return `|${left_space}${message}${right_space}|`;
 }
 
-export const logger = {
-    debug: (tag: string, message: string) => logger._out('debug', tag, message),
-    info: (tag: string, message: string) => logger._out('info', tag, message),
-    warn: (tag: string, message: string) => logger._out('warn', tag, message),
-    error: (tag: string, message: string) => logger._out('error', tag, message),
-    critical: (tag: string, message: string) => logger._out('critical', tag, message),
+const logger = {
+    debug: (tag: string, message: string) => logger._out(tag, message, 'debug'),
+    info: (tag: string, message: string) => logger._out(tag, message, 'info'),
+    warn: (tag: string, message: string) => logger._out(tag, message, 'warn'),
+    error: (tag: string, message: string) => logger._out(tag, message, 'error'),
+    fatal: (tag: string, message: string) => logger._out(tag, message, 'fatal'),
 
     hr: (tag: string, message: string, level: LogLevel = 'info') => {
-        logger._out(level, tag, hr_line);
-        logger._out(level, tag, build_hr_message(message));
-        logger._out(level, tag, hr_line);
+        logger._out(tag, hr_line, level);
+        logger._out(tag, build_hr_message(message), level);
+        logger._out(tag, hr_line, level);
     },
 
-    sub_title: (tag: string, message: string) => {
-        logger.info(tag, `<<< ${message} >>>`);
+    sub_title: (tag: string, message: string, level: LogLevel = 'info') => {
+        logger._out(tag, `<<< ${message} >>>`, level);
     },
 
-    _out: (level: LogLevel, tag: string, message: string) => {
-        addLog(level, tag, message);
+    _out: (tag: string, message: string, level: LogLevel) => {
+        addLog(tag, message, level);
+    },
+
+    withTag: (tag: string) => {
+        return {
+            debug: (msg: string) => logger.debug(tag, msg),
+            info: (msg: string) => logger.info(tag, msg),
+            warn: (msg: string) => logger.warn(tag, msg),
+            error: (msg: string) => logger.error(tag, msg),
+            fatal: (msg: string) => logger.fatal(tag, msg),
+            hr: (msg: string, level?: LogLevel) => logger.hr(tag, msg, level),
+            sub_title: (msg: string, level: LogLevel) => logger.sub_title(tag, msg, level),
+            _out: (msg: string, level: LogLevel) => logger._out(tag, msg, level),
+        };
     },
 };
+
+export default logger;

@@ -8,14 +8,14 @@ import { LogEntry, LogLevel } from '@/types/log';
 
 interface LoggerStore {
     logs: LogEntry[];
-    addLog: (level: LogLevel, tag: string, message: string) => void;
+    addLog: (tag: string, message: string, level: LogLevel) => void;
     clearLogs: () => void;
 }
 
 export const useLoggerStore = create<LoggerStore>()(
     devtools((set) => ({
         logs: [],
-        addLog: (level, tag, message) => {
+        addLog: (tag, message, level) => {
             const newLog: LogEntry = {
                 timestamp: Date.now(),
                 level,

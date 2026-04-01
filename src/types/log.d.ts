@@ -1,5 +1,5 @@
 
-export type LogLevel = 'debug' | 'info' | 'warn' | 'error' | 'critical';
+export type LogLevel = 'debug' | 'info' | 'warn' | 'error' | 'fatal';
 
 export interface LogEntry {
     timestamp: number;
