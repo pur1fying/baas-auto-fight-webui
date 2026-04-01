@@ -1,8 +1,9 @@
 'use client';
 
+import { useRouter } from "next/navigation";
+
 import {ActionList, Avatar, IconButton, Stack} from "@primer/react";
 import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overlay";
-import React from "react";
 import {
     ArrowSwitchIcon,
     GearIcon, LogIcon, MeterIcon,
@@ -181,8 +182,10 @@ function UserAvatarButtonOverlayAppearance() {
 }
 
 function UserAvatarButtonOverlayLog() {
+    const router = useRouter()
+
     return (
-        <ActionList.Item>
+        <ActionList.Item onClick={ () => { router.push('/dashboard/webui_log') } }>
             <ActionList.LeadingVisual>
                 <LogIcon/>
             </ActionList.LeadingVisual>
@@ -201,8 +204,6 @@ function UserAvatarButtonOverlayDataMonitor() {
         </ActionList.Item>
     )
 }
-
-
 
 function UserAvatarButtonOverlaySignOut() {
     return (
