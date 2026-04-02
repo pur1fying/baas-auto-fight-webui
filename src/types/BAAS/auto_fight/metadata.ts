@@ -1,12 +1,14 @@
 export interface workflow_metadata {
     name : string,
     battle_type : string,
+    boss_name : string,
+    difficulty : string,
+    boss_health : BossHealthSetting,
     description : string,
     author : string,
     version : string,
     video_link : string,
     formation : formation_setting,
-    boss_health : BossHealthSetting,
     yolo : yolo_setting
 }
 

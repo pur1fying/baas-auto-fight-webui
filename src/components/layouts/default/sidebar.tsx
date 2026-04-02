@@ -1,16 +1,26 @@
 import React from 'react';
 
-interface props {
-    sidebar : React.ReactNode
+interface Props {
+    sidebar: React.ReactNode;
+    width? : string;
 }
 
-const DefaultLayoutSidebar = ({sidebar} :props) => {
+function DefaultLayoutSidebar(
+    {
+        sidebar,
+        width = "21rem"
+    }: Props)
+{
     if (sidebar == null) return null;
+
     return (
-        <aside className="w-84 border-r border-gray-200">
+        <aside
+            className="border-r border-gray-200 h-full overflow-y-auto"
+            style={{ width: width }}
+        >
             {sidebar}
         </aside>
-  );
-};
+    );
+}
 
 export default DefaultLayoutSidebar;

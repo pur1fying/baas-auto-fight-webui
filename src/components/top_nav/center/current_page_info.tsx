@@ -1,60 +1,54 @@
 'use client';
+
 import { Breadcrumbs } from "@primer/react";
+import { usePageInfoStore } from "@/store/page_info_store";
 
-export interface SingleInfo {
-    label: string;
-    href: string;
-}
-
-interface Props {
-    items: SingleInfo[];
-}
-
-const breadcrumbs_default_style = `
+const BASE_STYLE = `
     !text-[var(--fgColor-default)]
-    hover:!no-underline
-    hover:!bg-[var(--bgColor-disabled)]
     leading-[var(--base-size-24)]
     rounded-[var(--borderRadius-medium)]
     px-[var(--base-size-6)]
     py-[var(--base-size-4)]
+    hover:!no-underline
 `;
 
-function CurrentPageInfo({ items }: Props) {
+const INTERACTIVE_STYLE = `
+    hover:!bg-[var(--bgColor-disabled)]
+    cursor-pointer
+`;
+
+const DISABLED_STYLE = `
+    cursor-default
+    hover:!bg-transparent
+`;
+
+function CurrentPageInfo() {
+    const items = usePageInfoStore((state) => state.items);
+
     if (!items || items.length === 0) return null;
 
     return (
         <Breadcrumbs overflow="menu">
-            {items.map((item, index) =>
-                index === items.length - 1
-                    ? gen_breadcrumbs_last_item(item, index)
-                    : gen_breadcrumbs_item(item, index)
-            )}
+            {items.map((item, index) => {
+                const isLast = index === items.length - 1;
+                const isClickable = item.href && item.href !== "" && item.href !== "#";
+
+                return (
+                    <Breadcrumbs.Item
+                        key={`${item.href}-${index}`}
+                        href={isClickable ? item.href : undefined}
+                        className={`
+                            ${BASE_STYLE} 
+                            ${isLast ? 'font-bold' : ''} 
+                            ${isClickable ? INTERACTIVE_STYLE : DISABLED_STYLE}
+                        `}
+                        selected={isLast}
+                    >
+                        {item.label}
+                    </Breadcrumbs.Item>
+                );
+            })}
         </Breadcrumbs>
-    );
-}
-
-function gen_breadcrumbs_item(item: SingleInfo, key: number) {
-    return (
-        <Breadcrumbs.Item
-            key={key}
-            href={item.href}
-            className={breadcrumbs_default_style}
-        >
-            {item.label}
-        </Breadcrumbs.Item>
-    );
-}
-
-function gen_breadcrumbs_last_item(item: SingleInfo, key: number) {
-    return (
-        <Breadcrumbs.Item
-            key={key}
-            href={item.href}
-            className={`${breadcrumbs_default_style} font-bold `}
-        >
-            {item.label}
-        </Breadcrumbs.Item>
     );
 }
 

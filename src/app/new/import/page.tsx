@@ -3,21 +3,16 @@ import TopNavBar from '@/components/top_nav/top_nav';
 import React, {useEffect} from 'react'
 import DefaultLayout from '@/components/layouts/default/layout'
 import WorkflowEditor from "@/components/BAAS/workflow/editor/workflow_editor";
-import logger from "@/utils/logger";
 import {usePageInfoStore} from "@/store/page_info_store";
+import PageNewWorkflowBody from "@/components/BAAS/workflow/new/page_new_workflow_body";
 
 const PageInfo = [
-    { 
-        label: 'Pur1fying',
-        href: '/'
-    },
     {
-        label: 'This is BAAS AutoFIght workflow repository',
-        href: '/info'
+        label: 'Import workflow'
     }
 ];
 
-export default function Home() {
+export default function New() {
 
     const setPageInfo = usePageInfoStore(s => s.setPageInfo);
 
@@ -29,8 +24,8 @@ export default function Home() {
         <>
             <DefaultLayout
                 header={<TopNavBar/>}
-                sidebar={<div className="text-center text-blue-500"> this is sidebar </div>}
-                content={<div className="text-center"> <WorkflowEditor/> </div>}
+                sidebar={null}
+                content={<div className="flex justify-center"> this is import page </div>}
                 footer={<div className="text-center"> this is footer </div>}>
             </DefaultLayout>
         </>

@@ -46,7 +46,7 @@ const logger = {
             error: (msg: string) => logger.error(tag, msg),
             fatal: (msg: string) => logger.fatal(tag, msg),
             hr: (msg: string, level?: LogLevel) => logger.hr(tag, msg, level),
-            sub_title: (msg: string, level: LogLevel) => logger.sub_title(tag, msg, level),
+            sub_title: (msg: string, level?: LogLevel) => logger.sub_title(tag, msg, level),
             _out: (msg: string, level: LogLevel) => logger._out(tag, msg, level),
         };
     },

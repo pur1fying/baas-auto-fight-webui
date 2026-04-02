@@ -4,6 +4,7 @@ import {TriangleDownIcon, PlusIcon, RepoIcon, IssueOpenedIcon} from '@primer/oct
 import {Button, Tooltip, ActionList} from '@primer/react';
 
 import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overlay";
+import {useRouter} from "next/navigation";
 
 const TriangleDown = () => <TriangleDownIcon size={16}/>;
 const Plus = () => <PlusIcon size={16}/>;
@@ -65,8 +66,10 @@ function AddButtonOverlayOptions() {
 }
 
 function AddButtonOverlayOptionNewWorkFlow() {
+    const router = useRouter()
+
     return (
-        <ActionList.Item>
+        <ActionList.Item onClick={ () => { router.push('/new') } }>
             <ActionList.LeadingVisual>
                 <RepoIcon/>
             </ActionList.LeadingVisual>

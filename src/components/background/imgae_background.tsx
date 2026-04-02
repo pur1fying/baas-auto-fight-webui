@@ -1,6 +1,7 @@
 'use client';
 
-import React, {useRef, useState} from 'react';
+import React from 'react';
+import logger from "@/utils/logger";
 
 const DEFAULT_BACKGROUND_IMAGE = "/default_background.jpeg"
 
@@ -9,6 +10,9 @@ interface props {
     _opacity?: number;
     className?: string;
 }
+
+const tag_name = "ImageBackground";
+const _logger = logger.withTag(tag_name)
 
 function ImageBackground({
                              children,
@@ -30,6 +34,9 @@ function ImageBackground({
         zIndex: 0,
         pointerEvents: 'none'
     };
+
+    _logger.sub_title("Init Image Background");
+    _logger.info(`Image Path : ${backgroundStyle.backgroundImage}`)
 
     return (
         <div
