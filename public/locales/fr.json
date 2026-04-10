@@ -1,0 +1,50 @@
+{
+  "common": {
+    "footer": "pied de page",
+    "noLogsYet": "Aucun journal pour le moment",
+    "thisIsFooter": "Ceci est le pied de page"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "Rechercher des langues",
+    "title": "Sélectionner la langue"
+  },
+  "nav": {
+    "createNew": "Créer nouveau...",
+    "newBaasWorkflow": "Nouveau workflow BAAS",
+    "newIssue": "Nouveau problème",
+    "repositories": "Dépôts",
+    "repository": "Dépôt",
+    "issue": "Problème",
+    "issues": "Problèmes",
+    "notification": "Notification",
+    "notifications": "Notifications",
+    "openMenu": "Ouvrir le menu",
+    "homePage": "Page d'accueil",
+    "search": "Rechercher",
+    "searchButton": "Bouton de recherche",
+    "typeToSearch": "Tapez ",
+    "toSearch": " pour rechercher"
+  },
+  "settings": {
+    "language": "Langue",
+    "languageDescription": "Sélectionnez votre langue préférée",
+    "title": "Paramètres"
+  },
+  "userMenu": {
+    "appearance": "Apparence",
+    "baasWebuiLog": "Journal Webui BAAS",
+    "baasWorkflows": "BAAS Workflows",
+    "closeUserNavMenu": "Fermer le menu de navigation utilisateur",
+    "dataMonitor": "Moniteur de données",
+    "openUserNavMenu": "Ouvrir le menu de navigation utilisateur",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "signOut": "Se déconnecter",
+    "stars": "Favoris",
+    "switchAccount": "Changer de compte",
+    "userIcon": "Icône utilisateur"
+  },
+  "workflow": {
+    "newBaasWorkflow": "Nouveau workflow BAAS"
+  }
+}

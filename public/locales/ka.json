@@ -1,0 +1,50 @@
+{
+  "common": {
+    "footer": "ქვედა კოლონტიტული",
+    "noLogsYet": "ჟურნალი ჯერ არ არის",
+    "thisIsFooter": "ეს არის ქვედა კოლონტიტული"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "ენების ძიება",
+    "title": "ენის არჩევა"
+  },
+  "nav": {
+    "createNew": "ახლის შექმნა...",
+    "newBaasWorkflow": "ახალი BAAS სამუშაო პროცესი",
+    "newIssue": "ახალი პრობლემა",
+    "repositories": "რეპოზიტორიები",
+    "repository": "რეპოზიტორია",
+    "issue": "პრობლემა",
+    "issues": "პრობლემები",
+    "notification": "შეტყობინება",
+    "notifications": "შეტყობინებები",
+    "openMenu": "მენიუს გახსნა",
+    "homePage": "მთავარი გვერდი",
+    "search": "ძიება",
+    "searchButton": "ძიების ღილაკი",
+    "typeToSearch": "ჩაწერე ",
+    "toSearch": " ძიებისთვის"
+  },
+  "settings": {
+    "language": "ენა",
+    "languageDescription": "აირჩიეთ თქვენი სასურველი ენა",
+    "title": "პარამეტრები"
+  },
+  "userMenu": {
+    "appearance": "გარემო",
+    "baasWebuiLog": "BAAS Webui ჟურნალი",
+    "baasWorkflows": "BAAS Workflows",
+    "closeUserNavMenu": "მომხმარებლის ნავიგაციის მენიუს დახურვა",
+    "dataMonitor": "მონაცემთა მონიტორი",
+    "openUserNavMenu": "მომხმარებლის ნავიგაციის მენიუს გახსნა",
+    "profile": "პროფილი",
+    "settings": "პარამეტრები",
+    "signOut": "გასვლა",
+    "stars": "ვარსკვლავები",
+    "switchAccount": "ანგარიშის გადართვა",
+    "userIcon": "მომხმარებლის ხატულა"
+  },
+  "workflow": {
+    "newBaasWorkflow": "ახალი BAAS სამუშაო პროცესი"
+  }
+}

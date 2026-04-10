@@ -5,13 +5,14 @@ import {Button, Tooltip, ActionList} from '@primer/react';
 
 import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overlay";
 import {useRouter} from "next/navigation";
+import { useTranslation } from 'react-i18next';
 
 const TriangleDown = () => <TriangleDownIcon size={16}/>;
 const Plus = () => <PlusIcon size={16}/>;
 const add_button_style = `
-    !hidden 
+    !hidden
     sm:!flex
-    !bg-[var(--bgColor-default)] 
+    !bg-[var(--bgColor-default)]
     !p-2
     !gap-1
     !w-[50px]
@@ -19,6 +20,7 @@ const add_button_style = `
 const container_root_id = 'top-nav-bar-add-button-whole-box'
 
 function AddButton() {
+    const { t } = useTranslation();
     // Overlay control
     const {
         isOpen,
@@ -33,7 +35,7 @@ function AddButton() {
     return (
         <div ref={renderBoxRef}>
             <div ref={buttonContainerRef}>
-                <Tooltip text="Create new...">
+                <Tooltip text={t('nav.createNew')}>
                     <Button
                         onClick={toggleOverlay}
                         className={add_button_style}
@@ -66,6 +68,7 @@ function AddButtonOverlayOptions() {
 }
 
 function AddButtonOverlayOptionNewWorkFlow() {
+    const { t } = useTranslation();
     const router = useRouter()
 
     return (
@@ -73,22 +76,23 @@ function AddButtonOverlayOptionNewWorkFlow() {
             <ActionList.LeadingVisual>
                 <RepoIcon/>
             </ActionList.LeadingVisual>
-            New BAAS Workflow
+            {t('nav.newBaasWorkflow')}
         </ActionList.Item>
     )
 }
 
 function AddButtonOverlayOptionNewIssue() {
+    const { t } = useTranslation();
+
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <IssueOpenedIcon/>
             </ActionList.LeadingVisual>
-            New Issue
+            {t('nav.newIssue')}
         </ActionList.Item>
     )
 }
 
 
 export default AddButton;
-

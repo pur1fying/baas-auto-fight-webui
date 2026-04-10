@@ -1,0 +1,50 @@
+{
+  "common": {
+    "footer": "Fußzeile",
+    "noLogsYet": "Noch keine Protokolle",
+    "thisIsFooter": "Dies ist die Fußzeile"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "Sprachen suchen",
+    "title": "Sprache auswählen"
+  },
+  "nav": {
+    "createNew": "Neu erstellen...",
+    "newBaasWorkflow": "Neuer BAAS-Workflow",
+    "newIssue": "Neues Problem",
+    "repositories": "Repositories",
+    "repository": "Repository",
+    "issue": "Problem",
+    "issues": "Probleme",
+    "notification": "Benachrichtigung",
+    "notifications": "Benachrichtigungen",
+    "openMenu": "Menü öffnen",
+    "homePage": "Startseite",
+    "search": "Suchen",
+    "searchButton": "Suchschaltfläche",
+    "typeToSearch": "Typ ",
+    "toSearch": " zum Suchen"
+  },
+  "settings": {
+    "language": "Sprache",
+    "languageDescription": "Wählen Sie Ihre bevorzugte Sprache",
+    "title": "Einstellungen"
+  },
+  "userMenu": {
+    "appearance": "Erscheinungsbild",
+    "baasWebuiLog": "BAAS Webui-Protokoll",
+    "baasWorkflows": "BAAS Workflows",
+    "closeUserNavMenu": "Benutzer-Navigationsmenü schließen",
+    "dataMonitor": "Datenmonitor",
+    "openUserNavMenu": "Benutzer-Navigationsmenü öffnen",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "signOut": "Abmelden",
+    "stars": "Favoriten",
+    "switchAccount": "Konto wechseln",
+    "userIcon": "Benutzer-Symbol"
+  },
+  "workflow": {
+    "newBaasWorkflow": "Neuer BAAS-Workflow"
+  }
+}

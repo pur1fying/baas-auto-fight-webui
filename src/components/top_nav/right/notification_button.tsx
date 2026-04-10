@@ -1,16 +1,18 @@
 import {InboxIcon} from '@primer/octicons-react'
 import { IconButton } from '@primer/react';
+import { useTranslation } from 'react-i18next';
 
 
 function NotificationButton() {
+    const { t } = useTranslation();
     return (
         <>
-            <IconButton 
+            <IconButton
                 className = "!bg-[var(--bgColor-default)]"
                 size="medium"
-                aria-label="Notification"
+                aria-label={t('nav.notification')}
                 icon={InboxIcon}
-                description='Notifications'
+                description={t('nav.notifications')}
                 keybindingHint='G N'
             />
         </>

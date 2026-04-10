@@ -1,0 +1,50 @@
+{
+  "common": {
+    "footer": "footer",
+    "noLogsYet": "No logs yet",
+    "thisIsFooter": "this is footer"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "Search languages",
+    "title": "Select Language"
+  },
+  "nav": {
+    "createNew": "Create new...",
+    "newBaasWorkflow": "New BAAS Workflow",
+    "newIssue": "New Issue",
+    "repositories": "Repositories",
+    "repository": "Repository",
+    "issue": "Issue",
+    "issues": "Issues",
+    "notification": "Notification",
+    "notifications": "Notifications",
+    "openMenu": "Open menu",
+    "homePage": "Home Page",
+    "search": "Search",
+    "searchButton": "Search Button",
+    "typeToSearch": "Type ",
+    "toSearch": " to search"
+  },
+  "settings": {
+    "language": "Language",
+    "languageDescription": "Select your preferred language",
+    "title": "Settings"
+  },
+  "userMenu": {
+    "appearance": "Appearance",
+    "baasWebuiLog": "BAAS Webui Log",
+    "baasWorkflows": "BAAS Workflows",
+    "closeUserNavMenu": "Close user navigation menu",
+    "dataMonitor": "Data Monitor",
+    "openUserNavMenu": "Open user navigation menu",
+    "profile": "Profile",
+    "settings": "Settings",
+    "signOut": "Sign out",
+    "stars": "Stars",
+    "switchAccount": "Switch account",
+    "userIcon": "User Icon"
+  },
+  "workflow": {
+    "newBaasWorkflow": "New BAAS workflow"
+  }
+}

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from "next/navigation";
+import { useTranslation } from 'react-i18next';
 
 import {ActionList, Avatar, IconButton, Stack} from "@primer/react";
 import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overlay";
@@ -33,6 +34,7 @@ function getUserDisplayName() {
 const container_root_id = 'top-nav-bar-user-avatar-whole-box'
 
 function UserAvatarButton() {
+    const { t } = useTranslation();
     const {
         isOpen,
         buttonRef,
@@ -49,8 +51,8 @@ function UserAvatarButton() {
                 onClick={toggleOverlay}
                 size="medium"
                 icon={UserAvatar}
-                aria-label="User Icon"
-                description={`${isOpen ? "Close" : "Open"} user navigation menu`}
+                aria-label={t('userMenu.userIcon')}
+                description={isOpen ? t('userMenu.closeUserNavMenu') : t('userMenu.openUserNavMenu')}
                 variant="invisible"
             />
 
@@ -109,6 +111,7 @@ function UserAvatarButtonOverlayOptions() {
 }
 
 function UserAvatarButtonOverlayUserAvatarAndName() {
+    const { t } = useTranslation();
     return (
         <div className="ml-3 mt-3">
             <Stack className="mr-3" direction="horizontal" justify="space-between">
@@ -120,68 +123,74 @@ function UserAvatarButtonOverlayUserAvatarAndName() {
                     </div>
                 </Stack>
 
-                <IconButton icon={ArrowSwitchIcon} variant="invisible" aria-label="Switch account"/>
+                <IconButton icon={ArrowSwitchIcon} variant="invisible" aria-label={t('userMenu.switchAccount')}/>
             </Stack>
         </div>
     )
 }
 
 function UserAvatarButtonOverlayProfile() {
+    const { t } = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <PersonIcon/>
             </ActionList.LeadingVisual>
-            Profile
+            {t('userMenu.profile')}
         </ActionList.Item>
     )
 }
 
 function UserAvatarButtonOverlayWorkflows() {
+    const { t } = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <RepoIcon/>
             </ActionList.LeadingVisual>
-            BAAS Workflows
+            {t('userMenu.baasWorkflows')}
         </ActionList.Item>
     )
 }
 
 function UserAvatarButtonOverlayStars() {
+    const { t } = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <StarIcon/>
             </ActionList.LeadingVisual>
-            Stars
+            {t('userMenu.stars')}
         </ActionList.Item>
     )
 }
 
 function UserAvatarButtonOverlaySettings() {
+    const { t } = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <GearIcon/>
             </ActionList.LeadingVisual>
-            Settings
+            {t('userMenu.settings')}
         </ActionList.Item>
     )
 }
 
 function UserAvatarButtonOverlayAppearance() {
+    const { t } = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <PaintbrushIcon/>
             </ActionList.LeadingVisual>
-            Appearance
+            {t('userMenu.appearance')}
         </ActionList.Item>
     )
 }
 
 function UserAvatarButtonOverlayLog() {
+    const { t } = useTranslation();
     const router = useRouter()
 
     return (
@@ -189,29 +198,31 @@ function UserAvatarButtonOverlayLog() {
             <ActionList.LeadingVisual>
                 <LogIcon/>
             </ActionList.LeadingVisual>
-            BAAS Webui Log
+            {t('userMenu.baasWebuiLog')}
         </ActionList.Item>
     )
 }
 
 function UserAvatarButtonOverlayDataMonitor() {
+    const { t } = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <MeterIcon/>
             </ActionList.LeadingVisual>
-            Data Monitor
+            {t('userMenu.dataMonitor')}
         </ActionList.Item>
     )
 }
 
 function UserAvatarButtonOverlaySignOut() {
+    const { t } = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
                 <SignOutIcon/>
             </ActionList.LeadingVisual>
-            Sign out
+            {t('userMenu.signOut')}
         </ActionList.Item>
     )
 }

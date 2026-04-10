@@ -1,16 +1,18 @@
 import {RepoIcon} from '@primer/octicons-react'
 import { IconButton } from '@primer/react';
+import { useTranslation } from 'react-i18next';
 
 
 function RepoButton() {
+    const { t } = useTranslation();
     return (
         <>
-            <IconButton 
+            <IconButton
                 className = "!bg-[var(--bgColor-default)] !hidden sm:!flex"
                 size = "medium"
-                aria-label="Repositories"
+                aria-label={t('nav.repositories')}
                 icon={RepoIcon}
-                description='Repositories'
+                description={t('nav.repositories')}
             />
         </>
     );

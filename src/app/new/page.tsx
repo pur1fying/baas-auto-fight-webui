@@ -5,20 +5,19 @@ import DefaultLayout from '@/components/layouts/default/layout'
 import WorkflowEditor from "@/components/BAAS/workflow/editor/workflow_editor";
 import {usePageInfoStore} from "@/store/page_info_store";
 import PageNewWorkflowBody from "@/components/BAAS/workflow/new/page_new_workflow_body";
-
-const PageInfo = [
-    {
-        label: 'New BAAS workflow'
-    }
-];
+import { useTranslation } from 'react-i18next';
 
 export default function New() {
-
+    const { t } = useTranslation();
     const setPageInfo = usePageInfoStore(s => s.setPageInfo);
 
+    const pageInfo = [
+        { label: t('workflow.newBaasWorkflow') }
+    ];
+
     useEffect(() => {
-        setPageInfo(PageInfo);
-    }, [setPageInfo]);
+        setPageInfo(pageInfo);
+    }, [setPageInfo, pageInfo]);
 
     return (
         <>
@@ -26,7 +25,7 @@ export default function New() {
                 header={<TopNavBar/>}
                 sidebar={null}
                 content={<div className="flex justify-center"> <PageNewWorkflowBody/> </div>}
-                footer={<div className="text-center"> this is footer </div>}>
+                footer={<div className="text-center">{t('common.thisIsFooter')}</div>}>
             </DefaultLayout>
         </>
     );

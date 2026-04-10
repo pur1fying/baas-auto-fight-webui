@@ -1,0 +1,50 @@
+{
+  "common": {
+    "footer": "нижний колонтитул",
+    "noLogsYet": "Пока нет журналов",
+    "thisIsFooter": "это нижний колонтитул"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "Поиск языков",
+    "title": "Выбор языка"
+  },
+  "nav": {
+    "createNew": "Создать новое...",
+    "newBaasWorkflow": "Новый BAAS-рабочий процесс",
+    "newIssue": "Новая проблема",
+    "repositories": "Репозитории",
+    "repository": "Репозиторий",
+    "issue": "Проблема",
+    "issues": "Проблемы",
+    "notification": "Уведомление",
+    "notifications": "Уведомления",
+    "openMenu": "Открыть меню",
+    "homePage": "Главная страница",
+    "search": "Поиск",
+    "searchButton": "Кнопка поиска",
+    "typeToSearch": "Введите ",
+    "toSearch": " для поиска"
+  },
+  "settings": {
+    "language": "Язык",
+    "languageDescription": "Выберите предпочитаемый язык",
+    "title": "Настройки"
+  },
+  "userMenu": {
+    "appearance": "Внешний вид",
+    "baasWebuiLog": "BAAS Webui журнал",
+    "baasWorkflows": "BAAS Workflows",
+    "closeUserNavMenu": "Закрыть меню навигации пользователя",
+    "dataMonitor": "Монитор данных",
+    "openUserNavMenu": "Открыть меню навигации пользователя",
+    "profile": "Профиль",
+    "settings": "Настройки",
+    "signOut": "Выйти",
+    "stars": "Избранное",
+    "switchAccount": "Сменить аккаунт",
+    "userIcon": "Значок пользователя"
+  },
+  "workflow": {
+    "newBaasWorkflow": "Новый BAAS-рабочий процесс"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "common": {
+    "footer": "바닥글",
+    "noLogsYet": "아직 로그가 없습니다",
+    "thisIsFooter": "이것은 바닥글입니다"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "언어 검색",
+    "title": "언어 선택"
+  },
+  "nav": {
+    "createNew": "새로 만들기...",
+    "newBaasWorkflow": "새 BAAS 워크플로",
+    "newIssue": "새 이슈",
+    "repositories": "저장소",
+    "repository": "저장소",
+    "issue": "이슈",
+    "issues": "이슈",
+    "notification": "알림",
+    "notifications": "알림",
+    "openMenu": "메뉴 열기",
+    "homePage": "홈 페이지",
+    "search": "검색",
+    "searchButton": "검색 버튼",
+    "typeToSearch": "입력 ",
+    "toSearch": " 검색"
+  },
+  "settings": {
+    "language": "언어",
+    "languageDescription": "선호하는 언어를 선택하세요",
+    "title": "설정"
+  },
+  "userMenu": {
+    "appearance": "모양",
+    "baasWebuiLog": "BAAS Webui 로그",
+    "baasWorkflows": "BAAS 워크플로",
+    "closeUserNavMenu": "사용자 탐색 메뉴 닫기",
+    "dataMonitor": "데이터 모니터",
+    "openUserNavMenu": "사용자 탐색 메뉴 열기",
+    "profile": "프로필",
+    "settings": "설정",
+    "signOut": "로그아웃",
+    "stars": "즐겨찾기",
+    "switchAccount": "계정 전환",
+    "userIcon": "사용자 아이콘"
+  },
+  "workflow": {
+    "newBaasWorkflow": "새 BAAS 워크플로"
+  }
+}

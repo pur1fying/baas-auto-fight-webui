@@ -1,17 +1,19 @@
 import {IssueOpenedIcon} from '@primer/octicons-react'
 import { IconButton } from '@primer/react';
+import { useTranslation } from 'react-i18next';
 
 
 function IssueButton() {
+    const { t } = useTranslation();
     return (
         <>
-            <IconButton 
+            <IconButton
                 as = "button"
                 className = "!bg-[var(--bgColor-default)] !hidden sm:!flex"
                 size="medium"
                 icon={IssueOpenedIcon}
-                aria-label="Issue"
-                description='Issues'
+                aria-label={t('nav.issue')}
+                description={t('nav.issues')}
                 keybindingHint='G D'
             />
         </>

@@ -1,0 +1,50 @@
+{
+  "common": {
+    "footer": "頁尾",
+    "noLogsYet": "暫無日誌",
+    "thisIsFooter": "這是頁尾"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "搜尋語言",
+    "title": "選擇語言"
+  },
+  "nav": {
+    "createNew": "創建...",
+    "newBaasWorkflow": "新建 BAAS 工作流",
+    "newIssue": "新建議題",
+    "repositories": "倉庫",
+    "repository": "倉庫",
+    "issue": "議題",
+    "issues": "議題",
+    "notification": "通知",
+    "notifications": "通知",
+    "openMenu": "打開菜單",
+    "homePage": "主頁",
+    "search": "搜索",
+    "searchButton": "搜索按鈕",
+    "typeToSearch": "輸入 ",
+    "toSearch": " 进行搜索"
+  },
+  "settings": {
+    "language": "語言",
+    "languageDescription": "選擇您偏好的語言",
+    "title": "設定"
+  },
+  "userMenu": {
+    "appearance": "外觀",
+    "baasWebuiLog": "BAAS Webui 日誌",
+    "baasWorkflows": "BAAS 工作流",
+    "closeUserNavMenu": "關閉用戶導航菜單",
+    "dataMonitor": "數據監控",
+    "openUserNavMenu": "打開用戶導航菜單",
+    "profile": "個人資料",
+    "settings": "設置",
+    "signOut": "退出登錄",
+    "stars": "收藏",
+    "switchAccount": "切換賬戶",
+    "userIcon": "用戶圖標"
+  },
+  "workflow": {
+    "newBaasWorkflow": "新建 BAAS 工作流"
+  }
+}

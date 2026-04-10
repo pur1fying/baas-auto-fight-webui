@@ -1,6 +1,7 @@
 'use client';
 
 import { IconButton } from "@primer/react";
+import { useTranslation } from 'react-i18next';
 
 const BAAS_ICON_PATH = "/logo.png";
 
@@ -11,13 +12,14 @@ function HomePageIcon() {
 
 
 function BAAS_IconButton() {
+    const { t } = useTranslation();
     return (
         <IconButton
             className="ml-1"
             as="a"
             size="medium"
             icon={HomePageIcon}
-            aria-label="Home Page"
+            aria-label={t('nav.homePage')}
             keybindingHint="G D"
             variant="invisible"
             href="/"
