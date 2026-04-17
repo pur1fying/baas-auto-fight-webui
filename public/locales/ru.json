@@ -10,20 +10,19 @@
   },
   "nav": {
     "createNew": "Создать новое...",
-    "newBaasWorkflow": "Новый BAAS-рабочий процесс",
-    "newIssue": "Новая проблема",
-    "repositories": "Репозитории",
-    "repository": "Репозиторий",
+    "homePage": "Главная страница",
     "issue": "Проблема",
     "issues": "Проблемы",
+    "newBaasWorkflow": "Новый BAAS-рабочий процесс",
+    "newIssue": "Новая проблема",
     "notification": "Уведомление",
     "notifications": "Уведомления",
     "openMenu": "Открыть меню",
-    "homePage": "Главная страница",
+    "repositories": "Репозитории",
     "search": "Поиск",
     "searchButton": "Кнопка поиска",
-    "typeToSearch": "Введите ",
-    "toSearch": " для поиска"
+    "toSearch": " для поиска",
+    "typeToSearch": "Введите "
   },
   "settings": {
     "language": "Язык",
@@ -45,6 +44,14 @@
     "userIcon": "Значок пользователя"
   },
   "workflow": {
+    "new": {
+      "form": {
+        "general": {
+          "ownerShipDescription": "",
+          "workflowNameDescription": ""
+        }
+      }
+    },
     "newBaasWorkflow": "Новый BAAS-рабочий процесс"
   }
 }

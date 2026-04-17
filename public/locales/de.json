@@ -10,20 +10,19 @@
   },
   "nav": {
     "createNew": "Neu erstellen...",
-    "newBaasWorkflow": "Neuer BAAS-Workflow",
-    "newIssue": "Neues Problem",
-    "repositories": "Repositories",
-    "repository": "Repository",
+    "homePage": "Startseite",
     "issue": "Problem",
     "issues": "Probleme",
+    "newBaasWorkflow": "Neuer BAAS-Workflow",
+    "newIssue": "Neues Problem",
     "notification": "Benachrichtigung",
     "notifications": "Benachrichtigungen",
     "openMenu": "Menü öffnen",
-    "homePage": "Startseite",
+    "repositories": "Repositories",
     "search": "Suchen",
     "searchButton": "Suchschaltfläche",
-    "typeToSearch": "Typ ",
-    "toSearch": " zum Suchen"
+    "toSearch": " zum Suchen",
+    "typeToSearch": "Typ "
   },
   "settings": {
     "language": "Sprache",
@@ -45,6 +44,14 @@
     "userIcon": "Benutzer-Symbol"
   },
   "workflow": {
+    "new": {
+      "form": {
+        "general": {
+          "ownerShipDescription": "",
+          "workflowNameDescription": ""
+        }
+      }
+    },
     "newBaasWorkflow": "Neuer BAAS-Workflow"
   }
 }

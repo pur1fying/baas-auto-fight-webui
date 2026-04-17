@@ -10,20 +10,19 @@
   },
   "nav": {
     "createNew": "創建...",
-    "newBaasWorkflow": "新建 BAAS 工作流",
-    "newIssue": "新建議題",
-    "repositories": "倉庫",
-    "repository": "倉庫",
+    "homePage": "主頁",
     "issue": "議題",
     "issues": "議題",
+    "newBaasWorkflow": "新建 BAAS 工作流",
+    "newIssue": "新建議題",
     "notification": "通知",
     "notifications": "通知",
     "openMenu": "打開菜單",
-    "homePage": "主頁",
+    "repositories": "倉庫",
     "search": "搜索",
     "searchButton": "搜索按鈕",
-    "typeToSearch": "輸入 ",
-    "toSearch": " 进行搜索"
+    "toSearch": " 进行搜索",
+    "typeToSearch": "輸入 "
   },
   "settings": {
     "language": "語言",
@@ -45,6 +44,14 @@
     "userIcon": "用戶圖標"
   },
   "workflow": {
+    "new": {
+      "form": {
+        "general": {
+          "ownerShipDescription": "",
+          "workflowNameDescription": ""
+        }
+      }
+    },
     "newBaasWorkflow": "新建 BAAS 工作流"
   }
 }

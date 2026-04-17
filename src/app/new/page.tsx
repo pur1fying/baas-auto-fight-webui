@@ -2,7 +2,6 @@
 import TopNavBar from '@/components/top_nav/top_nav';
 import React, {useEffect} from 'react'
 import DefaultLayout from '@/components/layouts/default/layout'
-import WorkflowEditor from "@/components/BAAS/workflow/editor/workflow_editor";
 import {usePageInfoStore} from "@/store/page_info_store";
 import PageNewWorkflowBody from "@/components/BAAS/workflow/new/page_new_workflow_body";
 import { useTranslation } from 'react-i18next';

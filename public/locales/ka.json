@@ -10,20 +10,19 @@
   },
   "nav": {
     "createNew": "ახლის შექმნა...",
-    "newBaasWorkflow": "ახალი BAAS სამუშაო პროცესი",
-    "newIssue": "ახალი პრობლემა",
-    "repositories": "რეპოზიტორიები",
-    "repository": "რეპოზიტორია",
+    "homePage": "მთავარი გვერდი",
     "issue": "პრობლემა",
     "issues": "პრობლემები",
+    "newBaasWorkflow": "ახალი BAAS სამუშაო პროცესი",
+    "newIssue": "ახალი პრობლემა",
     "notification": "შეტყობინება",
     "notifications": "შეტყობინებები",
     "openMenu": "მენიუს გახსნა",
-    "homePage": "მთავარი გვერდი",
+    "repositories": "რეპოზიტორიები",
     "search": "ძიება",
     "searchButton": "ძიების ღილაკი",
-    "typeToSearch": "ჩაწერე ",
-    "toSearch": " ძიებისთვის"
+    "toSearch": " ძიებისთვის",
+    "typeToSearch": "ჩაწერე "
   },
   "settings": {
     "language": "ენა",
@@ -45,6 +44,14 @@
     "userIcon": "მომხმარებლის ხატულა"
   },
   "workflow": {
+    "new": {
+      "form": {
+        "general": {
+          "ownerShipDescription": "",
+          "workflowNameDescription": ""
+        }
+      }
+    },
     "newBaasWorkflow": "ახალი BAAS სამუშაო პროცესი"
   }
 }

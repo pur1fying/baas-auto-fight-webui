@@ -10,20 +10,19 @@
   },
   "nav": {
     "createNew": "새로 만들기...",
-    "newBaasWorkflow": "새 BAAS 워크플로",
-    "newIssue": "새 이슈",
-    "repositories": "저장소",
-    "repository": "저장소",
+    "homePage": "홈 페이지",
     "issue": "이슈",
     "issues": "이슈",
+    "newBaasWorkflow": "새 BAAS 워크플로",
+    "newIssue": "새 이슈",
     "notification": "알림",
     "notifications": "알림",
     "openMenu": "메뉴 열기",
-    "homePage": "홈 페이지",
+    "repositories": "저장소",
     "search": "검색",
     "searchButton": "검색 버튼",
-    "typeToSearch": "입력 ",
-    "toSearch": " 검색"
+    "toSearch": " 검색",
+    "typeToSearch": "입력 "
   },
   "settings": {
     "language": "언어",
@@ -45,6 +44,14 @@
     "userIcon": "사용자 아이콘"
   },
   "workflow": {
+    "new": {
+      "form": {
+        "general": {
+          "ownerShipDescription": "",
+          "workflowNameDescription": ""
+        }
+      }
+    },
     "newBaasWorkflow": "새 BAAS 워크플로"
   }
 }
