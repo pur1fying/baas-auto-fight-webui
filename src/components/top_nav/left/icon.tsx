@@ -1,15 +1,17 @@
 'use client';
 
-import { IconButton } from "@primer/react";
+import {Avatar, IconButton} from "@primer/react";
 import { useTranslation } from 'react-i18next';
 
 const BAAS_ICON_PATH = "/logo.png";
 
-function HomePageIcon() {
-    return <img src={BAAS_ICON_PATH} width={32} height={32} />;
+interface props  {
+  size?: number;
 }
 
-
+function HomePageIcon({ size = 32 }: props) {
+    return <Avatar src={BAAS_ICON_PATH} size={size}/>;
+}
 
 function BAAS_IconButton() {
     const { t } = useTranslation();

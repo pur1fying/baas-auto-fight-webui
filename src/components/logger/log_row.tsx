@@ -43,7 +43,7 @@ const LogRow = ({ log, index }: Props) => {
                     {formattedNumber}
                 </span>
 
-                <span className="text-[var(--fgColor-muted)]mr-2">
+                <span className="text-[var(--fgColor-muted)] mr-2">
                     [{timestampStr}]
                 </span>
 

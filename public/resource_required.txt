@@ -13,3 +13,7 @@
 # 动态信息
 
 1. 某个服务器 近期 总力战，综合战术测试，无限制决战的情况  统计boss类型 / 护甲类型情况
+
+可参考网站
+https://schaledb.com/
+https://www.gamekee.com/ba/

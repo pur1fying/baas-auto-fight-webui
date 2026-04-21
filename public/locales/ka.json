@@ -11,6 +11,7 @@
   "nav": {
     "createNew": "ახლის შექმნა...",
     "homePage": "მთავარი გვერდი",
+    "importBaasWorkflow": "",
     "issue": "პრობლემა",
     "issues": "პრობლემები",
     "newBaasWorkflow": "ახალი BAAS სამუშაო პროცესი",
@@ -47,6 +48,7 @@
     "new": {
       "form": {
         "general": {
+          "generateRecommendedWorkflowName": "",
           "ownerShipDescription": "",
           "workflowNameDescription": ""
         }

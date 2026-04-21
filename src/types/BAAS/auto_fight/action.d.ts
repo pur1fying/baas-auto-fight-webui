@@ -5,8 +5,6 @@ export interface single_action {
     op : string,
     skill_n : string,
     l_rel_idx : string
-}
+};
 
-export interface action {
-    action_list : single_action[]
-}
+export type action = single_action[];

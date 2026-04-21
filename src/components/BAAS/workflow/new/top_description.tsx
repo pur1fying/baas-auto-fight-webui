@@ -6,16 +6,12 @@ import {BAAS_Cpp_Repo, BAAS_Repo} from "@/constants/links";
 function CreateNewWorkflowTopDescription() {
     return (
         <div className="flex flex-col mt-4">
-            <Text className="text-2xl font-bold">
+            <Text className="text-[20px] font-bold">
                 Create a new workflow
             </Text>
 
             <Text className="text-[var(--fgColor-muted)]">
-                A workflow is a reusable strategy contain your battle execution sequences.
-            </Text>
-
-            <Text className="text-[var(--fgColor-muted)]">
-                Have a project elsewhere?{" "}
+                A workflow is a reusable strategy contain your battle execution sequences. Have a workflow file elsewhere?{" "}
                 <Link href="/new/import" target="_blank" rel="noreferrer">
                     Import a workflow
                 </Link>
@@ -24,11 +20,11 @@ function CreateNewWorkflowTopDescription() {
 
             <Text className="text-[var(--fgColor-muted)]">
                 This website is powered by {" "}
-                <Link href={BAAS_Repo} target="_blank" rel="noreferrer">
+                <Link className="font-bold hover:!no-underline" href={BAAS_Repo} target="_blank" rel="noreferrer">
                     BlueArchiveAutoScript
                 </Link>
                 {" "} and {" "}
-                <Link href={BAAS_Cpp_Repo} target="_blank" rel="noreferrer">
+                <Link className="font-bold hover:!no-underline" href={BAAS_Cpp_Repo} target="_blank" rel="noreferrer">
                     BAAS_Cpp
                 </Link>
                 .

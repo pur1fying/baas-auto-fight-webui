@@ -2,9 +2,8 @@
 import TopNavBar from '@/components/top_nav/top_nav';
 import React, {useEffect} from 'react'
 import DefaultLayout from '@/components/layouts/default/layout'
-import WorkflowEditor from "@/components/BAAS/workflow/editor/workflow_editor";
 import {usePageInfoStore} from "@/store/page_info_store";
-import PageNewWorkflowBody from "@/components/BAAS/workflow/new/page_new_workflow_body";
+import PageImportWorkflowBody from "@/components/BAAS/workflow/new/import/page_import_workflow_body";
 
 const PageInfo = [
     {
@@ -25,7 +24,7 @@ export default function New() {
             <DefaultLayout
                 header={<TopNavBar/>}
                 sidebar={null}
-                content={<div className="flex justify-center"> this is import page </div>}
+                content={<div className="flex justify-center"> <PageImportWorkflowBody/> </div>}
                 footer={<div className="text-center"> this is footer </div>}>
             </DefaultLayout>
         </>

@@ -11,6 +11,7 @@
   "nav": {
     "createNew": "새로 만들기...",
     "homePage": "홈 페이지",
+    "importBaasWorkflow": "",
     "issue": "이슈",
     "issues": "이슈",
     "newBaasWorkflow": "새 BAAS 워크플로",
@@ -47,6 +48,7 @@
     "new": {
       "form": {
         "general": {
+          "generateRecommendedWorkflowName": "",
           "ownerShipDescription": "",
           "workflowNameDescription": ""
         }

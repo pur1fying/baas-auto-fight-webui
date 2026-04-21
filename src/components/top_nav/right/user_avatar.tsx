@@ -14,14 +14,11 @@ import {
     SignOutIcon,
     StarIcon
 } from "@primer/octicons-react";
+import UserAvatar from "@/components/user_avatar";
 
-const DEFAULT_USER_ICON_PATH = "/logo.png";
 const DEFAULT_USER_NAME = "Pur1fying"
 const DEFAULT_USER_DISPLAY_NAME = "Pur1fy"
 
-function UserAvatar() {
-    return <Avatar src={DEFAULT_USER_ICON_PATH} size={32}/>;
-}
 
 function getUsername() {
     return DEFAULT_USER_NAME;

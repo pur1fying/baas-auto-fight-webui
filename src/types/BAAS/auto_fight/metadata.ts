@@ -1,18 +1,19 @@
 export interface workflow_metadata {
     name : string,
+    author : string,
+    description : string,
+    video_link : string,
+
     battle_type : string,
     boss_name : string,
     difficulty : string,
-    boss_health : BossHealthSetting,
-    description : string,
-    author : string,
-    version : string,
-    video_link : string,
-    formation : formation_setting,
-    yolo : yolo_setting
+
+    BossHealth : BossHealthSetting,
+    formation : FormationSetting,
+    yolo_setting : YOLOSetting
 }
 
-export interface formation_setting {
+export interface FormationSetting {
     front : string[],
     back : string[],
     slot_count : number,
@@ -20,13 +21,13 @@ export interface formation_setting {
 }
 
 export interface BossHealthSetting {
-    current_ocr_region : string,
-    max_ocr_region : string,
-    ocr_region : string,
+    current_ocr_region : number[],
+    max_ocr_region : number[],
+    ocr_region : number[],
     ocr_model_name : string
 }
 
-export interface yolo_setting {
+export interface YOLOSetting {
     model : string,
     update_interval : number
 }

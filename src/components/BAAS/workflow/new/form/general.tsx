@@ -1,11 +1,16 @@
-import {Text, Timeline} from "@primer/react";
+'use client';
+import {Link, Button, Text, TextInput, Timeline, Tooltip} from "@primer/react";
 import {
     Time_Line_Heading_Text_Style,
     Time_Line_Item_Description_Text_Style,
     TimeLineBadge
 } from "@/components/BAAS/workflow/new/form/form";
 import {useTranslation} from "react-i18next";
+import {TriangleDownIcon} from "@primer/octicons-react";
+import UserAvatar from "@/components/user_avatar";
+import React from "react";
 
+const monkUserName = "Pur1fying";
 
 function CreateNewFormGeneral() {
     return (
@@ -13,8 +18,9 @@ function CreateNewFormGeneral() {
             <TimeLineBadge text="1"/>
             <Timeline.Body>
                 <Text className={Time_Line_Heading_Text_Style}>General</Text>
-                <div className="flex">
-                    <FillInOwnership/>
+
+                <div className="flex flex-1 mt-[4px]">
+                    <FillInOwnership avatarWidth={20}/>
                     <Divider/>
                     <FillInWorkflowName/>
                 </div>
@@ -23,41 +29,70 @@ function CreateNewFormGeneral() {
     )
 }
 
-function Divider(){
+function Divider() {
     return (
-        <span className="mt-[22px] ml-[8px] mr-[8px] text-[24px] font-bold text-[var(--fgColor-muted)]">/</span>
+        <span className="mt-[21px] ml-[8px] mr-[8px] text-[24px] text-[var(--fgColor-muted)]">/</span>
     )
 }
 
-function FillInOwnership() {
+function OwnershipAvatar(size: number) {
+    return <UserAvatar size={size}/>
+}
+
+const FillInOwnership:React.FC<{avatarWidth:number}> = ({avatarWidth}) => {
     return (
         <div className="flex flex-col">
             <OwnershipDescription/>
-            <Text> 114</Text>
+            <Button
+                className="!mt-[4px] !p-1 !px-2 [&>span]:!flex"
+                leadingVisual={()=> OwnershipAvatar(avatarWidth)}
+                trailingAction={TriangleDownIcon}
+            >
+                    {monkUserName}
+            </Button>
         </div>
     )
 }
 
 function FillInWorkflowName() {
+
     return (
-        <div>
+        <div className="flex flex-col flex-1">
             <WorkflowNameDescription/>
-            <Text>514</Text>
+            <TextInput className="mt-[4px] w-full"/>
+            <RecommendedWorkflowName/>
         </div>
     )
 }
 
 
-
-function OwnershipDescription() {
-    const { t } = useTranslation();
+function RecommendedWorkflowName() {
+    const {t} = useTranslation();
 
     return (
-        <div className="flex">
+        <>
+            <Text>
+                {t('workflow.new.form.general.generateRecommendedWorkflowName')}
+            </Text>
+
+
+            <Text className="" >
+
+            </Text>
+
+
+        </>
+    )
+}
+
+function OwnershipDescription() {
+    const {t} = useTranslation();
+
+    return (
+        <div className="flex gap-1">
             <Text className={Time_Line_Item_Description_Text_Style}>
                 {t('workflow.new.form.general.ownerShipDescription')}
             </Text>
-            {" "}
             <Text className={Time_Line_Item_Description_Text_Style}>
                 *
             </Text>
@@ -66,14 +101,13 @@ function OwnershipDescription() {
 }
 
 function WorkflowNameDescription() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
-        <div className="flex">
+        <div className="flex gap-1">
             <Text className={Time_Line_Item_Description_Text_Style}>
                 {t('workflow.new.form.general.workflowNameDescription')}
             </Text>
-            {" "}
             <Text className={Time_Line_Item_Description_Text_Style}>
                 *
             </Text>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {TriangleDownIcon, PlusIcon, RepoIcon, IssueOpenedIcon} from '@primer/octicons-react'
+import {TriangleDownIcon, PlusIcon, RepoIcon, IssueOpenedIcon, RepoPushIcon} from '@primer/octicons-react'
 import {Button, Tooltip, ActionList} from '@primer/react';
 
 import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overlay";
@@ -15,7 +15,6 @@ const add_button_style = `
     !bg-[var(--bgColor-default)]
     !p-2
     !gap-1
-    !w-[50px]
 `
 const container_root_id = 'top-nav-bar-add-button-whole-box'
 
@@ -46,12 +45,16 @@ function AddButton() {
             </div>
 
             <ButtonOverlay
+                style={{
+                    width: "220px"
+                }}
                 isOpen={isOpen}
                 onClose={closeOverlay}
                 anchorRef={buttonRef}
                 ignoreClickRefs={[buttonContainerRef]}
-                containerName={container_root_id}>
-
+                containerName={container_root_id}
+                top={5}
+            >
                 <AddButtonOverlayOptions/>
             </ButtonOverlay>
         </div>
@@ -62,6 +65,7 @@ function AddButtonOverlayOptions() {
     return (
         <ActionList>
             <AddButtonOverlayOptionNewWorkFlow/>
+            <AddButtonOverlayOptionImportWorkFlow/>
             <AddButtonOverlayOptionNewIssue/>
         </ActionList>
     )
@@ -77,6 +81,20 @@ function AddButtonOverlayOptionNewWorkFlow() {
                 <RepoIcon/>
             </ActionList.LeadingVisual>
             {t('nav.newBaasWorkflow')}
+        </ActionList.Item>
+    )
+}
+
+function AddButtonOverlayOptionImportWorkFlow() {
+    const { t } = useTranslation();
+    const router = useRouter()
+
+    return (
+        <ActionList.Item onClick={ () => { router.push('/new/import') } }>
+            <ActionList.LeadingVisual>
+                <RepoPushIcon/>
+            </ActionList.LeadingVisual>
+            {t('nav.importBaasWorkflow')}
         </ActionList.Item>
     )
 }

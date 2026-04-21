@@ -12,6 +12,10 @@ interface props {
     width?: OverlayProps['width'];
     height?: OverlayProps['height'];
     children: React.ReactNode;
+    top?: number,
+    bottom?: number,
+    left?: number,
+    right?: number
 }
 
 const ButtonOverlay = ({
@@ -24,6 +28,10 @@ const ButtonOverlay = ({
                            width,
                            height,
                            children,
+                           top,
+                           bottom,
+                           left,
+                           right
                        }: props) => {
     if (!isOpen) return null;
 
@@ -37,6 +45,10 @@ const ButtonOverlay = ({
             style={style}
             width={width}
             height={height}
+            top={top}
+            bottom={bottom}
+            left={left}
+            right={right}
         >
             {children}
         </Overlay>

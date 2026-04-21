@@ -5,13 +5,13 @@ import CreateNewFormGeneral from "@/components/BAAS/workflow/new/form/general";
 export const Time_Line_Heading_Text_Style = `
     font-bold
     !text-[var(--fgColor-default)] 
-    text-[18px]
+    text-[16px]
 `
 
 export const Time_Line_Item_Description_Text_Style = `
     font-bold
     !text-[var(--fgColor-default)] 
-    text-[16px]
+    text-[14px]
 `
 
 

@@ -11,6 +11,7 @@
   "nav": {
     "createNew": "Создать новое...",
     "homePage": "Главная страница",
+    "importBaasWorkflow": "",
     "issue": "Проблема",
     "issues": "Проблемы",
     "newBaasWorkflow": "Новый BAAS-рабочий процесс",
@@ -47,6 +48,7 @@
     "new": {
       "form": {
         "general": {
+          "generateRecommendedWorkflowName": "",
           "ownerShipDescription": "",
           "workflowNameDescription": ""
         }

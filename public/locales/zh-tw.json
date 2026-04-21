@@ -11,6 +11,7 @@
   "nav": {
     "createNew": "創建...",
     "homePage": "主頁",
+    "importBaasWorkflow": "",
     "issue": "議題",
     "issues": "議題",
     "newBaasWorkflow": "新建 BAAS 工作流",
@@ -47,6 +48,7 @@
     "new": {
       "form": {
         "general": {
+          "generateRecommendedWorkflowName": "",
           "ownerShipDescription": "",
           "workflowNameDescription": ""
         }
