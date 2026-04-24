@@ -2,13 +2,13 @@
   "name": "baas-auto-fight-webui",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+  "packageManager": "pnpm@10.33.2",
+    "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "extract": "npx i18next",
-    "extract:watch": "npx i18next --watch",
-    "translate": "node scripts/ai-translate.mjs"
+    "extract": "pnpm exec i18next",
+    "extract:watch": "pnpm exec i18next --watch"
   },
   "dependencies": {
     "@primer/css": "^22.1.0",
