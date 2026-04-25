@@ -11,8 +11,8 @@ interface props {
     className?: string;
 }
 
-const tag_name = "ImageBackground";
-const _logger = logger.withTag(tag_name)
+const log_tag = "ImageBackground";
+const _logger = logger.withTag(log_tag)
 
 function ImageBackground({
                              children,
