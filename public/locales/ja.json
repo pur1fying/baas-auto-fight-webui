@@ -1,0 +1,59 @@
+{
+  "common": {
+    "footer": "フッター",
+    "noLogsYet": "ログはまだありません",
+    "thisIsFooter": "これはフッターです"
+  },
+  "languageSwitcher": {
+    "searchPlaceholder": "言語を検索",
+    "title": "言語を選択"
+  },
+  "nav": {
+    "createNew": "新規作成...",
+    "homePage": "ホーム",
+    "importBaasWorkflow": "BAASワークフローをインポート",
+    "issue": " 이슈",
+    "issues": " 이슈들",
+    "newBaasWorkflow": "新規BAASワークフロー",
+    "newIssue": "新規 이슈",
+    "notification": "通知",
+    "notifications": "通知一覧",
+    "openMenu": "メニューを開く",
+    "repositories": "リポジトリ",
+    "search": "検索",
+    "searchButton": "検索ボタン",
+    "toSearch": "検索する",
+    "typeToSearch": "入力して"
+  },
+  "settings": {
+    "language": "言語",
+    "languageDescription": "ご希望の言語を選択してください",
+    "title": "設定"
+  },
+  "userMenu": {
+    "appearance": "外観",
+    "baasWebuiLog": "BAAS WebUIログ",
+    "baasWorkflows": "BAASワークフロー",
+    "closeUserNavMenu": "ユーザーメニューを閉じる",
+    "dataMonitor": "データモニター",
+    "openUserNavMenu": "ユーザーメニューを開く",
+    "profile": "プロフィール",
+    "settings": "設定",
+    "signOut": "サインアウト",
+    "stars": "スター",
+    "switchAccount": "アカウントを切り替え",
+    "userIcon": "ユーザーアイコン"
+  },
+  "workflow": {
+    "new": {
+      "form": {
+        "general": {
+          "generateRecommendedWorkflowName": "以下のフォームを入力すると、推奨されるワークフロー名を生成します。",
+          "ownerShipDescription": "オーナー",
+          "workflowNameDescription": "ワークフロー名"
+        }
+      }
+    },
+    "newBaasWorkflow": "新規BAASワークフロー"
+  }
+}

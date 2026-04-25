@@ -10,11 +10,8 @@ const languages = [
     {code: 'en', label: 'English'},
     {code: 'zh', label: '简体中文'},
     {code: 'zh-tw', label: '繁體中文'},
-    {code: 'de', label: 'Deutsch'},
-    {code: 'fr', label: 'Français'},
-    {code: 'ka', label: 'ქართული'},
+    {code: 'ja', label: '日本語'},
     {code: 'ko', label: '한국어'},
-    {code: 'ru', label: 'Русский'},
 ];
 
 const i18nLog = logger.withTag('i18n');
