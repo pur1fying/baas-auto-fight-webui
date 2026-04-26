@@ -1,5 +1,3 @@
-
-
 export function formatTimestamp(timestamp: number): string {
     const d = new Date(timestamp)
 
@@ -13,4 +11,12 @@ export function formatTimestamp(timestamp: number): string {
     })
 
     return `${date} ${time}`
+}
+
+export function stringToJson(text: string) {
+    try {
+        return JSON.parse(text);
+    } catch (error) {
+        return error;
+    }
 }

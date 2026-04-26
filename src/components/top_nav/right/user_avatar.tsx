@@ -15,6 +15,7 @@ import {
     StarIcon
 } from "@primer/octicons-react";
 import UserAvatar from "@/components/user_avatar";
+import {router} from "next/client";
 
 const DEFAULT_USER_NAME = "Pur1fying"
 const DEFAULT_USER_DISPLAY_NAME = "Pur1fy"
@@ -164,8 +165,9 @@ function UserAvatarButtonOverlayStars() {
 
 function UserAvatarButtonOverlaySettings() {
     const { t } = useTranslation();
+    const router = useRouter();
     return (
-        <ActionList.Item>
+        <ActionList.Item onClick={ () => router.push("/settings")}>
             <ActionList.LeadingVisual>
                 <GearIcon/>
             </ActionList.LeadingVisual>
