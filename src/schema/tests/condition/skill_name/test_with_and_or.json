@@ -1,0 +1,17 @@
+{
+    "conditions": {
+        "test": {
+            "type": "skill_name",
+            "op": "at",
+            "name": "serina",
+            "p": 1,
+            "and": ["foo"]
+        },
+
+        "foo": {
+            "type": "cost",
+            "op": "over",
+            "value": 10.0
+        }
+    }
+}
