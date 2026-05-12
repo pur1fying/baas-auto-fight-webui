@@ -4,13 +4,13 @@ interface props {
     content : React.ReactNode
 }
 
-const DefaultLayoutContent = ({content} :props) => {
+const DefaultLayoutContent = ({content}: props) => {
     if (content == null) return null;
     return (
         <main className="flex flex-col items-center justify-center">
             {content}
         </main>
-  );
+    );
 };
 
 export default DefaultLayoutContent;

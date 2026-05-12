@@ -1,10 +1,10 @@
 export interface single_action {
-    name : string,
+    name        : string,
     description : string,
-    t : string,
-    op : string,
-    skill_n : string,
-    l_rel_idx : string
+    t           : string,
+    op          : string,
+    skill_n     : string,
+    l_rel_idx   : string
 };
 
 export type action = single_action[];

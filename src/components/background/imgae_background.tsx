@@ -6,9 +6,9 @@ import logger from "@/utils/logger";
 const DEFAULT_BACKGROUND_IMAGE = "/default_background.jpeg"
 
 interface props {
-    children?: React.ReactNode;
-    _opacity?: number;
-    className?: string;
+    children?  : React.ReactNode;
+    _opacity?  : number;
+    className? : string;
 }
 
 const log_tag = "ImageBackground";

@@ -105,10 +105,10 @@ function logEntry(entry: any) {
     }
 
     switch (type) {
-        case 'out':
+        case 'out'       :
             _logger._out(message, level);
             break;
-        case 'sub_title':
+        case 'sub_title' :
             _logger.sub_title(message, level);
     }
 }

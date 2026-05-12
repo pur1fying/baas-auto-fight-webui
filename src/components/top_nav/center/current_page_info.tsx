@@ -1,7 +1,7 @@
 'use client';
 
-import { Breadcrumbs } from "@primer/react";
-import { usePageInfoStore } from "@/store/page_info_store";
+import {Breadcrumbs} from "@primer/react";
+import {usePageInfoStore} from "@/store/page_info_store";
 
 const BASE_STYLE = `
     !text-[var(--fgColor-default)]
@@ -38,8 +38,8 @@ function CurrentPageInfo() {
                         key={`${item.href}-${index}`}
                         href={isClickable ? item.href : undefined}
                         className={`
-                            ${BASE_STYLE} 
-                            ${isLast ? 'font-bold' : ''} 
+                            ${BASE_STYLE}
+                            ${isLast ? 'font-bold' : ''}
                             ${isClickable ? INTERACTIVE_STYLE : DISABLED_STYLE}
                         `}
                         selected={isLast}

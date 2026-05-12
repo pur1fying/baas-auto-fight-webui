@@ -7,7 +7,7 @@ const ajv = new Ajv2020({
         Do not open strict mode, related issues:
             https://github.com/ajv-validator/ajv/issues/1950
             https://github.com/ajv-validator/ajv/issues/1571
-     */
+        */
     strict: false,
     discriminator: true,
     messages: false

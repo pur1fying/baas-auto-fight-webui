@@ -11,4 +11,3 @@ export interface BAAS_auto_fight_workflow {
     states      : map<string, state>,
     actions     : map<string, action>
 }
-

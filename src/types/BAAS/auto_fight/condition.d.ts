@@ -1,9 +1,9 @@
 export interface condition {
-    type : string,
-    op : string,
-    name : string,
-    p : number,
+    type    : string,
+    op      : string,
+    name    : string,
+    p       : number,
     timeout : number,
-    and : Array<string>,
-    or : Array<string>
+    and     : Array<string>,
+    or      : Array<string>
 }

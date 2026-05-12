@@ -1,9 +1,9 @@
 export interface state {
-    action : string,
+    action                 : string,
     action_fail_transition : string,
-    transitions : Array<{
+    transitions            : Array<{
         condition : string,
-        next : string
+        next      : string
     }>,
-    default_transition : string
+    default_transition     : string
 }

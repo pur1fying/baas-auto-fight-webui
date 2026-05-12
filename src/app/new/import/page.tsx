@@ -24,7 +24,7 @@ export default function New() {
             <DefaultLayout
                 header={<TopNavBar/>}
                 sidebar={null}
-                content={<div className="flex justify-center"> <PageImportWorkflowBody/> </div>}
+                content={<div className="flex justify-center"><PageImportWorkflowBody/></div>}
                 footer={<div className="text-center"> this is footer </div>}>
             </DefaultLayout>
         </>

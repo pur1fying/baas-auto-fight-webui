@@ -1,12 +1,10 @@
-import HomePageButton from "@/components/buttons/homepage";
-
-export default function Home() {
-    let itms = ["about page", "b", "c"];
-    console.log("Items:", itms);
+export default function AboutPage() {
     return (
-        <>
-            <HomePageButton items={itms}/>
-        </>
+        <main className="p-6">
+            <h1 className="text-2xl font-bold">BlueArchive AutoFight WorkFlow Hub</h1>
+            <p className="mt-3 text-[var(--fgColor-muted)]">
+                BAAS auto-fight workflow tools for creating, importing, validating, and sharing battle workflow files.
+            </p>
+        </main>
     );
 }
-

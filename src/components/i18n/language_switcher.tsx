@@ -65,8 +65,8 @@ function LanguageSwitcher() {
             open={open}
             onOpenChange={(open) => setOpen(open)}
             selected={selected}
-            onSelectedChange={(item) => {
-                if (item && 'text' in item) {
+            onSelectedChange={(item: { text?: string } | undefined) => {
+                if (item?.text) {
                     changeLanguage(item.text);
                 }
             }}

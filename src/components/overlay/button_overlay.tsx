@@ -3,36 +3,36 @@ import React, {useState, useRef, useEffect} from 'react';
 import {Overlay, OverlayProps, registerPortalRoot} from '@primer/react';
 
 interface props {
-    isOpen: boolean;
-    onClose: () => void;
-    anchorRef: React.RefObject<HTMLElement | null>;
-    containerName?: string;
-    ignoreClickRefs?: React.RefObject<HTMLElement | null>[];
-    style?: React.CSSProperties;
-    width?: OverlayProps['width'];
-    height?: OverlayProps['height'];
-    children: React.ReactNode;
-    top?: number,
-    bottom?: number,
-    left?: number,
-    right?: number
+    isOpen           : boolean;
+    onClose          : () => void;
+    anchorRef        : React.RefObject<HTMLElement | null>;
+    containerName?   : string;
+    ignoreClickRefs? : React.RefObject<HTMLElement | null>[];
+    style?           : React.CSSProperties;
+    width?           : OverlayProps['width'];
+    height?          : OverlayProps['height'];
+    children         : React.ReactNode;
+    top?             : number,
+    bottom?          : number,
+    left?            : number,
+    right?           : number
 }
 
 const ButtonOverlay = ({
-                           isOpen,
-                           onClose,
-                           anchorRef,
-                           containerName,
-                           ignoreClickRefs,
-                           style,
-                           width,
-                           height,
-                           children,
-                           top,
-                           bottom,
-                           left,
-                           right
-                       }: props) => {
+    isOpen,
+    onClose,
+    anchorRef,
+    containerName,
+    ignoreClickRefs,
+    style,
+    width,
+    height,
+    children,
+    top,
+    bottom,
+    left,
+    right
+}: props) => {
     if (!isOpen) return null;
 
     return (

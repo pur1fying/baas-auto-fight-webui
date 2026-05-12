@@ -12,11 +12,11 @@ import type {PathIssue} from "@/utils/workflowValidation/report"
 type AjvI18nLanguage = "en" | "zh" | "zh-tw" | "ja" | "ko"
 
 const ajv_localizers: Record<AjvI18nLanguage, (errors?: ErrorObject[] | null) => void> = {
-    en: localizeEn,
-    zh: localizeZh,
+    en      : localizeEn,
+    zh      : localizeZh,
     "zh-tw": localizeZhTW,
-    ja: localizeJa,
-    ko: localizeKo
+    ja      : localizeJa,
+    ko      : localizeKo
 }
 
 function getCurrentAjvLanguage(): AjvI18nLanguage {
@@ -69,8 +69,8 @@ function localizeAjvErrors(
 }
 
 export function collectSchemaIssues(data: unknown): {
-    isStructurallyValid: boolean
-    issues: PathIssue[]
+    isStructurallyValid : boolean
+    issues              : PathIssue[]
 } {
     const isStructurallyValid = validateBAASWorkflow(data)
 

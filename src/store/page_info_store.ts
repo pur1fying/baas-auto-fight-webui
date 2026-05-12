@@ -3,10 +3,10 @@ import {devtools} from "zustand/middleware";
 import {create} from "zustand";
 
 interface PageInfoStore {
-    items: single_page_info[];
-    setPageInfo: (newItems: single_page_info[]) => void;
-    addPageStep: (item: single_page_info) => void;
-    clear: () => void;
+    items       : single_page_info[];
+    setPageInfo : (newItems: single_page_info[]) => void;
+    addPageStep : (item: single_page_info) => void;
+    clear       : () => void;
 }
 
 export const usePageInfoStore = create<PageInfoStore>()(

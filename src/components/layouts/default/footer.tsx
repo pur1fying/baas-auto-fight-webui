@@ -4,13 +4,13 @@ interface props {
     footer : React.ReactNode
 }
 
-const DefaultLayoutFooter = ({footer} :props) => {
+const DefaultLayoutFooter = ({footer}: props) => {
     if (footer == null) return null;
     return (
         <footer>
             {footer}
         </footer>
-  );
+    );
 };
 
 export default DefaultLayoutFooter;

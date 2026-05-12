@@ -37,8 +37,8 @@ function CreateNewWorkflowForm() {
 }
 
 interface props {
-    text: string;
-    children?: React.ReactNode;
+    text      : string;
+    children? : React.ReactNode;
 }
 
 export function TimeLineBadge({text}: props) {

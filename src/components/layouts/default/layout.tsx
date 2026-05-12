@@ -6,11 +6,11 @@ import DefaultLayoutContent from "@/components/layouts/default/content";
 import ImageBackground from "@/components/background/imgae_background";
 
 interface Props {
-    header  ? : React.ReactNode;
-    sidebar ? : React.ReactNode;
-    sidebar_width ? : string;
-    content ? : React.ReactNode;
-    footer  ? : React.ReactNode;
+    header?        : React.ReactNode;
+    sidebar?       : React.ReactNode;
+    sidebar_width? : string;
+    content?       : React.ReactNode;
+    footer?        : React.ReactNode;
 }
 
 function DefaultLayout(
@@ -20,8 +20,7 @@ function DefaultLayout(
         sidebar_width,
         content,
         footer
-    }: Props)
-{
+    }: Props) {
     return (
         <ImageBackground>
             <div className="min-h-screen flex flex-col">

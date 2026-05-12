@@ -1,4 +1,4 @@
-import { Stack } from "@primer/react";
+import {Stack} from "@primer/react";
 import CurrentPageInfo from "./current_page_info";
 import SearchButton from "./search_region/search_module";
 
@@ -13,7 +13,7 @@ function TopNavCenter() {
             align="stretch"
         >
             <CurrentPageInfo/>
-            
+
             <SearchButton/>
         </Stack>
     );

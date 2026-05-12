@@ -5,7 +5,7 @@ import {Button, Tooltip, ActionList} from '@primer/react';
 
 import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overlay";
 import {useRouter} from "next/navigation";
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 const TriangleDown = () => <TriangleDownIcon size={16}/>;
 const Plus = () => <PlusIcon size={16}/>;
@@ -19,7 +19,7 @@ const add_button_style = `
 const container_root_id = 'top-nav-bar-add-button-whole-box'
 
 function AddButton() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     // Overlay control
     const {
         isOpen,
@@ -72,11 +72,13 @@ function AddButtonOverlayOptions() {
 }
 
 function AddButtonOverlayOptionNewWorkFlow() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const router = useRouter()
 
     return (
-        <ActionList.Item onClick={ () => { router.push('/new') } }>
+        <ActionList.Item onClick={() => {
+            router.push('/new')
+        }}>
             <ActionList.LeadingVisual>
                 <RepoIcon/>
             </ActionList.LeadingVisual>
@@ -86,11 +88,13 @@ function AddButtonOverlayOptionNewWorkFlow() {
 }
 
 function AddButtonOverlayOptionImportWorkFlow() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const router = useRouter()
 
     return (
-        <ActionList.Item onClick={ () => { router.push('/new/import') } }>
+        <ActionList.Item onClick={() => {
+            router.push('/new/import')
+        }}>
             <ActionList.LeadingVisual>
                 <RepoPushIcon/>
             </ActionList.LeadingVisual>
@@ -100,7 +104,7 @@ function AddButtonOverlayOptionImportWorkFlow() {
 }
 
 function AddButtonOverlayOptionNewIssue() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <ActionList.Item>

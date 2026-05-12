@@ -1,10 +1,10 @@
-import { LogEntry, LogLevel } from "@/types/log";
-import { formatTimestamp } from "@/utils/string_utils";
+import {LogEntry, LogLevel} from "@/types/log";
+import {formatTimestamp} from "@/utils/string_utils";
 import '@primer/css/dist/primer.css'
 
 interface Props {
-    log: LogEntry;
-    index: number;       
+    log   : LogEntry;
+    index : number;
 }
 
 const log_index_width = 6;
@@ -26,7 +26,7 @@ function padRight(str: string, width: number) {
     return str.padEnd(width, ' ')
 }
 
-const LogRow = ({ log, index }: Props) => {
+const LogRow = ({log, index}: Props) => {
     const logNumber = index + 1;
     const formattedNumber = String(logNumber).padStart(log_index_width, ' ');
     const timestampStr = formatTimestamp(log.timestamp);

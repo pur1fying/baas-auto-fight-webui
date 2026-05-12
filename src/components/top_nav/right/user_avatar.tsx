@@ -1,9 +1,9 @@
 'use client';
 
-import { useRouter } from "next/navigation";
-import { useTranslation } from 'react-i18next';
+import {useRouter} from "next/navigation";
+import {useTranslation} from 'react-i18next';
 
-import {ActionList, Avatar, IconButton, Stack} from "@primer/react";
+import {ActionList, IconButton, Stack} from "@primer/react";
 import ButtonOverlay, {useButtonOverlay} from "@/components/overlay/button_overlay";
 import {
     ArrowSwitchIcon,
@@ -15,7 +15,6 @@ import {
     StarIcon
 } from "@primer/octicons-react";
 import UserAvatar from "@/components/user_avatar";
-import {router} from "next/client";
 
 const DEFAULT_USER_NAME = "Pur1fying"
 const DEFAULT_USER_DISPLAY_NAME = "Pur1fy"
@@ -32,7 +31,7 @@ function getUserDisplayName() {
 const container_root_id = 'top-nav-bar-user-avatar-whole-box'
 
 function UserAvatarButton() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const {
         isOpen,
         buttonRef,
@@ -109,7 +108,7 @@ function UserAvatarButtonOverlayOptions() {
 }
 
 function UserAvatarButtonOverlayUserAvatarAndName() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
         <div className="ml-3 mt-3">
             <Stack className="mr-3" direction="horizontal" justify="space-between">
@@ -128,7 +127,7 @@ function UserAvatarButtonOverlayUserAvatarAndName() {
 }
 
 function UserAvatarButtonOverlayProfile() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
@@ -140,7 +139,7 @@ function UserAvatarButtonOverlayProfile() {
 }
 
 function UserAvatarButtonOverlayWorkflows() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
@@ -152,7 +151,7 @@ function UserAvatarButtonOverlayWorkflows() {
 }
 
 function UserAvatarButtonOverlayStars() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
@@ -164,10 +163,10 @@ function UserAvatarButtonOverlayStars() {
 }
 
 function UserAvatarButtonOverlaySettings() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const router = useRouter();
     return (
-        <ActionList.Item onClick={ () => router.push("/settings")}>
+        <ActionList.Item onClick={() => router.push("/settings")}>
             <ActionList.LeadingVisual>
                 <GearIcon/>
             </ActionList.LeadingVisual>
@@ -177,7 +176,7 @@ function UserAvatarButtonOverlaySettings() {
 }
 
 function UserAvatarButtonOverlayAppearance() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
@@ -189,11 +188,13 @@ function UserAvatarButtonOverlayAppearance() {
 }
 
 function UserAvatarButtonOverlayLog() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     const router = useRouter()
 
     return (
-        <ActionList.Item onClick={ () => { router.push('/dashboard/webui_log') } }>
+        <ActionList.Item onClick={() => {
+            router.push('/dashboard/webui_log')
+        }}>
             <ActionList.LeadingVisual>
                 <LogIcon/>
             </ActionList.LeadingVisual>
@@ -203,7 +204,7 @@ function UserAvatarButtonOverlayLog() {
 }
 
 function UserAvatarButtonOverlayDataMonitor() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>
@@ -215,7 +216,7 @@ function UserAvatarButtonOverlayDataMonitor() {
 }
 
 function UserAvatarButtonOverlaySignOut() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
         <ActionList.Item>
             <ActionList.LeadingVisual>

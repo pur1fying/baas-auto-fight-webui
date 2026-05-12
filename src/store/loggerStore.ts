@@ -1,15 +1,15 @@
 'use client';
 
-import { create } from 'zustand';
-import { devtools } from 'zustand/middleware';
+import {create} from 'zustand';
+import {devtools} from 'zustand/middleware';
 
-import { LogEntry, LogLevel } from '@/types/log';
+import {LogEntry, LogLevel} from '@/types/log';
 
 
 interface LoggerStore {
-    logs: LogEntry[];
-    addLog: (tag: string, message: string, level: LogLevel) => void;
-    clearLogs: () => void;
+    logs      : LogEntry[];
+    addLog   : (tag: string, message: string, level: LogLevel) => void;
+    clearLogs : () => void;
 }
 
 export const useLoggerStore = create<LoggerStore>()(
@@ -22,7 +22,7 @@ export const useLoggerStore = create<LoggerStore>()(
                 tag,
                 message,
             };
-            set((state) => ({ logs: [...state.logs, newLog] }));
+            set((state) => ({logs: [...state.logs, newLog]}));
         }
     }))
 );

@@ -1,5 +1,5 @@
 'use client';
-import {Link, Button, Text, TextInput, Timeline, Tooltip} from "@primer/react";
+import {Button, Text, TextInput, Timeline} from "@primer/react";
 import {
     Time_Line_Heading_Text_Style,
     Time_Line_Item_Description_Text_Style,
@@ -39,16 +39,16 @@ function OwnershipAvatar(size: number) {
     return <UserAvatar size={size}/>
 }
 
-const FillInOwnership:React.FC<{avatarWidth:number}> = ({avatarWidth}) => {
+const FillInOwnership: React.FC<{ avatarWidth: number }> = ({avatarWidth}) => {
     return (
         <div className="flex flex-col">
             <OwnershipDescription/>
             <Button
                 className="!mt-[4px] !p-1 !px-2 [&>span]:!flex"
-                leadingVisual={()=> OwnershipAvatar(avatarWidth)}
+                leadingVisual={() => OwnershipAvatar(avatarWidth)}
                 trailingAction={TriangleDownIcon}
             >
-                    {monkUserName}
+                {monkUserName}
             </Button>
         </div>
     )
@@ -76,7 +76,7 @@ function RecommendedWorkflowName() {
             </Text>
 
 
-            <Text className="" >
+            <Text className="">
 
             </Text>
 

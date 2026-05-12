@@ -3,11 +3,10 @@ import TopNavBar from '@/components/top_nav/top_nav';
 import React, {useEffect} from 'react'
 import DefaultLayout from '@/components/layouts/default/layout'
 import WorkflowEditor from "@/components/BAAS/workflow/editor/workflow_editor";
-import logger from "@/utils/logger";
 import {usePageInfoStore} from "@/store/page_info_store";
 
 const PageInfo = [
-    { 
+    {
         label: 'Pur1fying',
         href: '/'
     },
@@ -30,10 +29,9 @@ export default function Home() {
             <DefaultLayout
                 header={<TopNavBar/>}
                 sidebar={<div className="text-center text-blue-500"> this is sidebar </div>}
-                content={<div className="text-center"> <WorkflowEditor/> </div>}
+                content={<div className="text-center"><WorkflowEditor/></div>}
                 footer={<div className="text-center"> this is footer </div>}>
             </DefaultLayout>
         </>
     );
 }
-

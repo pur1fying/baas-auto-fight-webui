@@ -213,46 +213,46 @@ export function deleteByPath<T extends object>(source: T, path: string): T {
 }
 
 export interface BAASWorkflowStore {
-    workflow: BAAS_auto_fight_workflow;
+    workflow : BAAS_auto_fight_workflow;
 
-    setWorkflow: (workflow: BAAS_auto_fight_workflow) => void;
-    setEmptyWorkflow: () => void;
+    setWorkflow      : (workflow: BAAS_auto_fight_workflow) => void;
+    setEmptyWorkflow : () => void;
 
     // common set method
-    setWorkflowByPath: (path: string, value: unknown) => void;
-    removeWorkflowByPath: (path: string) => void;
+    setWorkflowByPath    : (path: string, value: unknown) => void;
+    removeWorkflowByPath : (path: string) => void;
 
     // set an exact field in workflow
-    setMetadataField: <K extends keyof workflow_metadata>(
+    setMetadataField   : <K extends keyof workflow_metadata>(
         key: K,
         value: workflow_metadata[K]
     ) => void;
 
-    setBossHealthField: <K extends keyof BossHealthSetting>(
+    setBossHealthField : <K extends keyof BossHealthSetting>(
         key: K,
         value: BossHealthSetting[K]
     ) => void;
 
-    setFormationField: <K extends keyof FormationSetting>(
+    setFormationField  : <K extends keyof FormationSetting>(
         key: K,
         value: FormationSetting[K]
     ) => void;
 
-    setYoloField: <K extends keyof YOLOSetting>(
+    setYoloField       : <K extends keyof YOLOSetting>(
         key: K,
         value: YOLOSetting[K]
     ) => void;
 
-    setStartState: (value: string) => void;
+    setStartState : (value: string) => void;
 
-    setCondition: (name: string, value: condition) => void;
-    removeCondition: (name: string) => void;
+    setCondition    : (name: string, value: condition) => void;
+    removeCondition : (name: string) => void;
 
-    setState: (name: string, value: state) => void;
-    removeState: (name: string) => void;
+    setState    : (name: string, value: state) => void;
+    removeState : (name: string) => void;
 
-    setAction: (name: string, value: action) => void;
-    removeAction: (name: string) => void;
+    setAction    : (name: string, value: action) => void;
+    removeAction : (name: string) => void;
 }
 
 export const useBAASWorkflowStore = create<BAASWorkflowStore>((set) => ({

@@ -11,7 +11,8 @@ function CreateNewWorkflowTopDescription() {
             </Text>
 
             <Text className="text-[var(--fgColor-muted)]">
-                A workflow is a reusable strategy contain your battle execution sequences. Have a workflow file elsewhere?{" "}
+                A workflow is a reusable strategy contain your battle execution sequences. Have a workflow file
+                elsewhere?{" "}
                 <Link href="/new/import" target="_blank" rel="noreferrer">
                     Import a workflow
                 </Link>

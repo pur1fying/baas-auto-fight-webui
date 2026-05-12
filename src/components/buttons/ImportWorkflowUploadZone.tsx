@@ -2,7 +2,7 @@
 
 import {useRef, useState} from "react";
 import {Button, Spinner, Text, TextInput} from "@primer/react";
-import {ArrowUpIcon, LogIcon, XIcon} from "@primer/octicons-react";
+import {ArrowUpIcon, XIcon} from "@primer/octicons-react";
 import logger from "@/utils/logger";
 import {stringToJson} from "@/utils/string_utils";
 import {buildWorkflowPathReport} from "@/utils/workflowValidation/report";
@@ -11,16 +11,16 @@ const log_tag = "Import Workflow";
 const _logger = logger.withTag(log_tag);
 
 type ImportWorkflowUploadZoneProps = {
-    onFileSelect?: (file: File) => Promise<void> | void;
-    onFileRemove?: () => Promise<void> | void;
+    onFileSelect? : (file: File) => Promise<void> | void;
+    onFileRemove? : () => Promise<void> | void;
 };
 
 type UploadStatus = "idle" | "loading" | "error";
 
 type UploadedFileInfo = {
-    name: string;
-    displayName: string;
-    size: number;
+    name        : string;
+    displayName : string;
+    size        : number;
 };
 
 function formatFileSizeMB(size: number): string {
@@ -41,7 +41,7 @@ function ImportWorkflowUploadZone({onFileSelect, onFileRemove}: ImportWorkflowUp
         _logger.info(`File received from ${source}: name="${file.name}", size=${file.size} bytes, type="${file.type}"`);
 
         // read file content
-        let fileText : string;
+        let fileText: string;
         try {
             fileText = await file.text();
         } catch (error) {
@@ -65,7 +65,7 @@ function ImportWorkflowUploadZone({onFileSelect, onFileRemove}: ImportWorkflowUp
         _logger.info("File is valid JSON");
 
         const result = buildWorkflowPathReport(obj);
-        console.log(result);
+        _logger.info(`Workflow validation completed with ${result.issues.length} issue(s).`);
 
 
         // status change
@@ -145,7 +145,8 @@ function ImportWorkflowUploadZone({onFileSelect, onFileRemove}: ImportWorkflowUp
 
         try {
             await onFileRemove?.();
-        } catch (error) {}
+        } catch (error) {
+        }
     }
 
     function handleDisplayNameChange(value: string) {
@@ -173,7 +174,8 @@ function ImportWorkflowUploadZone({onFileSelect, onFileRemove}: ImportWorkflowUp
             />
 
             {uploadedFile ? (
-                <div className="w-full !rounded-md border border-[var(--borderColor-default)] px-4 py-3 flex items-start justify-between gap-4">
+                <div
+                    className="w-full !rounded-md border border-[var(--borderColor-default)] px-4 py-3 flex items-start justify-between gap-4">
                     <TextInput
                         className="w-full"
                         monospace

@@ -11,18 +11,18 @@ export type PathIssueKind =
     | "semantic_warning";
 
 export type PathIssue = {
-    path: string;
-    kind: PathIssueKind;
-    source: "schema" | "missing" | "extra" | "semantic";
-    message: string;
-    keyword?: string;
-    value?: unknown;
+    path     : string;
+    kind     : PathIssueKind;
+    source   : "schema" | "missing" | "extra" | "semantic";
+    message  : string;
+    keyword? : string;
+    value?   : unknown;
 };
 
 export type WorkflowPathReport = {
-    isStructurallyValid: boolean;
-    issues: PathIssue[];
-    issuesByPath: Record<string, PathIssue[]>;
+    isStructurallyValid : boolean;
+    issues              : PathIssue[];
+    issuesByPath        : Record<string, PathIssue[]>;
 };
 
 export function groupIssuesByPath(

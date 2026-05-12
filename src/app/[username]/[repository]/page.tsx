@@ -1,9 +1,9 @@
-import { notFound } from "next/navigation";
+import {notFound} from "next/navigation";
 
-const Repo = async ({ params }: { params: Promise<{ username: string, repository: string }> }) => {
-    const { username, repository } = await params;
+const Repo = async ({params}: { params: Promise<{ username: string, repository: string }> }) => {
+    const {username, repository} = await params;
 
-    notFound();    
+    notFound();
     return (
         <div>
             <h1>User Page {username}</h1>
