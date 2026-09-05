@@ -1,0 +1,24 @@
+.auto-fight-workspace {
+    --af-canvas-bg: var(--bgColor-default);
+    --af-canvas-dots: var(--borderColor-muted);
+    --af-surface: var(--bgColor-muted);
+    --af-surface-raised: var(--bgColor-default);
+    --af-surface-hover: var(--bgColor-neutral-muted);
+    --af-border: var(--borderColor-default);
+    --af-border-strong: var(--borderColor-emphasis);
+    --af-text: var(--fgColor-default);
+    --af-text-muted: var(--fgColor-muted);
+    --af-condition: var(--fgColor-accent);
+    --af-condition-muted: var(--bgColor-accent-muted);
+    --af-default: var(--fgColor-muted);
+    --af-fail: var(--fgColor-danger);
+    --af-fail-muted: var(--bgColor-danger-muted);
+    --af-start: var(--fgColor-success);
+    --af-start-muted: var(--bgColor-success-muted);
+    --af-end: var(--fgColor-done);
+    --af-end-muted: var(--bgColor-done-muted);
+    --af-runtime: var(--borderColor-accent-emphasis);
+    --af-pending: var(--borderColor-attention-emphasis);
+    color: var(--af-text);
+    background: var(--af-canvas-bg);
+}

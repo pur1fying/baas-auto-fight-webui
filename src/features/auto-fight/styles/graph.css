@@ -1,0 +1,392 @@
+.auto-fight-graph {
+    min-width: 0;
+    min-height: 0;
+    flex: 1;
+    position: relative;
+    background: var(--af-canvas-bg);
+}
+
+.auto-fight-flow {
+    --xy-background-color: var(--af-canvas-bg);
+    --xy-node-color-default: var(--af-text);
+    --xy-node-border-default: 0;
+    --xy-edge-stroke-default: var(--af-default);
+    --xy-edge-stroke-width-default: 2;
+    background: var(--af-canvas-bg);
+}
+
+.auto-fight-flow .react-flow__background pattern circle {
+    fill: var(--af-canvas-dots);
+}
+
+.auto-fight-flow .react-flow__node-state {
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.auto-fight-flow .react-flow__controls,
+.auto-fight-flow .react-flow__minimap {
+    overflow: hidden;
+    border: 1px solid var(--af-border);
+    border-radius: 8px;
+    background: var(--af-surface-raised);
+    box-shadow: var(--shadow-floating-small, 0 3px 8px var(--borderColor-muted));
+}
+
+.auto-fight-flow .react-flow__controls-button {
+    border-bottom-color: var(--af-border);
+    color: var(--af-text);
+    background: var(--af-surface-raised);
+}
+
+.auto-fight-flow .react-flow__controls-button:hover {
+    background: var(--af-surface-hover);
+}
+
+.auto-fight-flow .react-flow__controls-button svg {
+    fill: currentColor;
+}
+
+.auto-fight-flow .react-flow__minimap-mask {
+    fill: var(--bgColor-neutral-muted);
+}
+
+.auto-fight-flow .react-flow__minimap-node {
+    fill: var(--bgColor-accent-muted);
+    stroke: var(--borderColor-accent-muted);
+}
+
+.auto-fight-state-node {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: visible;
+    border: 1px solid var(--af-border-strong);
+    border-radius: 10px;
+    color: var(--af-text);
+    background: var(--af-surface-raised);
+    box-shadow: var(--shadow-resting-medium, 0 4px 12px var(--borderColor-muted));
+    transition: border-color 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+.auto-fight-state-node:hover,
+.auto-fight-state-node[data-selected='true'] {
+    border-color: var(--borderColor-accent-emphasis);
+}
+
+.auto-fight-state-node[data-runtime='visited'] {
+    opacity: 0.84;
+}
+
+.auto-fight-state-node[data-runtime='pending'] {
+    border-color: var(--af-pending);
+    box-shadow: 0 0 0 2px var(--bgColor-attention-muted);
+}
+
+.auto-fight-state-node[data-runtime='active'] {
+    border-color: var(--af-runtime);
+    box-shadow:
+        0 0 0 3px var(--bgColor-accent-muted),
+        var(--shadow-floating-medium, 0 8px 24px var(--borderColor-accent-muted));
+}
+
+.auto-fight-state-node[data-runtime='active'][data-runtime-status='paused'] {
+    border-style: dashed;
+}
+
+.auto-fight-node-header {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 10px;
+    border-bottom: 1px solid var(--af-border);
+    border-radius: 9px 9px 0 0;
+    background: var(--af-surface);
+}
+
+.auto-fight-node-title,
+.auto-fight-resource-link,
+.auto-fight-transfer-label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+}
+
+.auto-fight-node-title {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 650;
+}
+
+.auto-fight-node-title span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.auto-fight-node-title:hover,
+.auto-fight-resource-link:hover,
+.auto-fight-transfer-label:hover {
+    color: var(--fgColor-accent);
+    text-decoration: underline;
+}
+
+.auto-fight-node-badges {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.auto-fight-node-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 5px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 14px;
+    white-space: nowrap;
+}
+
+.auto-fight-node-badge svg {
+    width: 10px;
+    height: 10px;
+}
+
+.auto-fight-node-badge.is-start {
+    color: var(--af-start);
+    background: var(--af-start-muted);
+}
+
+.auto-fight-node-badge.is-end {
+    color: var(--af-end);
+    background: var(--af-end-muted);
+}
+
+.auto-fight-node-badge.is-success-end {
+    color: var(--fgColor-attention);
+    background: var(--bgColor-attention-muted);
+}
+
+.auto-fight-node-description {
+    height: 36px;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 6px 10px;
+    color: var(--af-text-muted);
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.auto-fight-node-action-row,
+.auto-fight-transfer-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.auto-fight-node-action-row {
+    height: 38px;
+    border-top: 1px solid var(--af-border);
+    border-bottom: 1px solid var(--af-border);
+    background: var(--af-surface);
+    font-size: 12px;
+}
+
+.auto-fight-row-kind {
+    color: var(--af-text-muted);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.auto-fight-row-muted,
+.auto-fight-transfer-target {
+    overflow: hidden;
+    color: var(--af-text-muted);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.auto-fight-resource-link {
+    overflow: hidden;
+    color: var(--fgColor-accent);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.auto-fight-transfer-list {
+    overflow: hidden;
+    border-radius: 0 0 9px 9px;
+}
+
+.auto-fight-transfer-row {
+    height: 34px;
+    border-bottom: 1px solid var(--af-border);
+    font-size: 11px;
+}
+
+.auto-fight-transfer-row:last-child {
+    border-bottom: 0;
+}
+
+.auto-fight-transfer-row.is-condition {
+    background: var(--af-condition-muted);
+}
+
+.auto-fight-transfer-row.is-action-fail {
+    background: var(--af-fail-muted);
+}
+
+.auto-fight-transfer-label {
+    flex: none;
+    max-width: 118px;
+    overflow: hidden;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.auto-fight-transfer-row.is-condition .auto-fight-transfer-label {
+    color: var(--af-condition);
+}
+
+.auto-fight-transfer-row.is-action-fail .auto-fight-transfer-label {
+    color: var(--af-fail);
+}
+
+.auto-fight-port {
+    width: 11px;
+    height: 11px;
+    border: 2px solid var(--af-surface-raised);
+    background: var(--af-default);
+}
+
+.auto-fight-port-target {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--af-border-strong);
+}
+
+.auto-fight-port.is-condition {
+    border-radius: 50%;
+    background: var(--af-condition);
+}
+
+.auto-fight-port.is-default {
+    border-radius: 2px;
+    background: var(--af-default);
+}
+
+.auto-fight-port.is-action-fail {
+    border-radius: 1px;
+    background: var(--af-fail);
+    transform: translate(50%, -50%) rotate(45deg);
+}
+
+.auto-fight-bottom-ports {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+}
+
+.auto-fight-bottom-ports .auto-fight-port.is-action-fail {
+    transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.auto-fight-edge {
+    fill: none;
+    stroke-width: 2.2;
+}
+
+.auto-fight-edge.is-condition {
+    stroke: var(--af-condition);
+}
+
+.auto-fight-edge.is-default {
+    stroke: var(--af-default);
+    stroke-dasharray: 8 6;
+}
+
+.auto-fight-edge.is-action-fail {
+    stroke: var(--af-fail);
+    stroke-dasharray: 12 5 3 5;
+}
+
+.auto-fight-edge-runtime {
+    pointer-events: none;
+    fill: none;
+    stroke: var(--af-runtime);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 2 14;
+    filter: drop-shadow(0 0 4px var(--af-runtime));
+    animation: auto-fight-edge-flow 650ms linear infinite;
+}
+
+@keyframes auto-fight-edge-flow {
+    to {
+        stroke-dashoffset: -32;
+    }
+}
+
+.auto-fight-edge-label {
+    position: absolute;
+    z-index: 5;
+    max-width: 150px;
+    overflow: hidden;
+    padding: 3px 7px;
+    border: 1px solid var(--af-border);
+    border-radius: 999px;
+    color: var(--af-text);
+    background: var(--af-surface-raised);
+    box-shadow: var(--shadow-resting-small, 0 1px 3px var(--borderColor-muted));
+    font-size: 10px;
+    line-height: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.auto-fight-edge-label:hover {
+    border-color: var(--borderColor-accent-emphasis);
+}
+
+.auto-fight-edge-label.is-condition {
+    color: var(--af-condition);
+}
+
+.auto-fight-edge-label.is-action-fail {
+    color: var(--af-fail);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .auto-fight-state-node {
+        transition: none;
+    }
+
+    .auto-fight-edge-runtime {
+        stroke-dasharray: none;
+        animation: none;
+    }
+}

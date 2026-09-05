@@ -1,0 +1,129 @@
+.auto-fight-detail-dock {
+    position: relative;
+    min-width: 320px;
+    max-width: 55vw;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--af-border);
+    background: var(--af-surface-raised);
+}
+
+.auto-fight-detail-resizer {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    left: -4px;
+    width: 8px;
+    cursor: col-resize;
+}
+
+.auto-fight-detail-resizer:hover {
+    background: var(--bgColor-accent-muted);
+}
+
+.auto-fight-detail-tabs-row {
+    min-height: 48px;
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--af-border);
+}
+
+.auto-fight-detail-tabs {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+}
+
+.auto-fight-detail-tab-group {
+    flex: none;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--af-border);
+}
+
+.auto-fight-detail-tab[aria-selected='true'] {
+    box-shadow: inset 0 -2px 0 var(--borderColor-accent-emphasis);
+}
+
+.auto-fight-preview-dot {
+    color: var(--fgColor-muted);
+    font-size: 7px;
+}
+
+.auto-fight-detail-content {
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.auto-fight-detail-body {
+    min-height: 0;
+    flex: 1;
+    overflow: auto;
+    padding: 4px;
+}
+
+.auto-fight-detail-empty {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    color: var(--af-text-muted);
+    text-align: center;
+}
+
+.auto-fight-detail-field {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--af-border);
+    line-height: 1.55;
+}
+
+.auto-fight-detail-label {
+    margin-bottom: 5px;
+    color: var(--af-text-muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.auto-fight-detail-card {
+    padding: 9px;
+    border: 1px solid var(--af-border);
+    border-radius: 7px;
+    background: var(--af-surface);
+}
+
+.auto-fight-json-block {
+    min-height: 100%;
+    margin: 0;
+    padding: 12px;
+    overflow: auto;
+    border: 1px solid var(--af-border);
+    border-radius: 7px;
+    color: var(--af-text);
+    background: var(--af-surface);
+    font-family: var(--fontStack-monospace, ui-monospace, monospace);
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+@media (max-width: 980px) {
+    .auto-fight-detail-dock {
+        position: absolute;
+        z-index: 15;
+        top: 64px;
+        right: 0;
+        bottom: 0;
+        box-shadow: var(--shadow-floating-large, 0 8px 32px var(--borderColor-muted));
+    }
+}

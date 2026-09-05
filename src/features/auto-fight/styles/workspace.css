@@ -1,0 +1,86 @@
+.auto-fight-workspace {
+    height: 100dvh;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.auto-fight-toolbar {
+    position: relative;
+    z-index: 20;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--af-border);
+    background: var(--af-surface-raised);
+    box-shadow: var(--shadow-resting-small, 0 1px 2px var(--borderColor-muted));
+}
+
+.auto-fight-toolbar-title,
+.auto-fight-toolbar-groups,
+.auto-fight-runtime-controls {
+    display: flex;
+    align-items: center;
+}
+
+.auto-fight-toolbar-title {
+    min-width: 250px;
+    gap: 9px;
+}
+
+.auto-fight-toolbar-title h1 {
+    max-width: 360px;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.auto-fight-toolbar-groups {
+    min-width: 0;
+    justify-content: flex-end;
+    gap: 9px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.auto-fight-runtime-controls {
+    gap: 7px;
+    padding-left: 9px;
+    border-left: 1px solid var(--af-border);
+}
+
+.auto-fight-mock-badge {
+    padding: 2px 7px;
+    border: 1px solid var(--borderColor-attention-muted);
+    border-radius: 999px;
+    color: var(--fgColor-attention);
+    background: var(--bgColor-attention-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.auto-fight-workspace-main {
+    min-height: 0;
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+@media (max-width: 980px) {
+    .auto-fight-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .auto-fight-toolbar-groups {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
