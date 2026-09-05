@@ -17,7 +17,7 @@ export type RuntimeEvent =
     | {readonly type: 'run-reset'};
 
 export interface RuntimeEventSource {
-    subscribe(listener: (event: RuntimeEvent) => void): () => void;
+    readonly subscribe: (listener: (event: RuntimeEvent) => void) => () => void;
 }
 
 export type RuntimeStatus = 'idle' | 'running' | 'paused' | 'completed' | 'failed';

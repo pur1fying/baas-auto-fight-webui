@@ -21,6 +21,7 @@ export interface TransitionEdgeData extends Record<string, unknown> {
     conditionId?: string;
     sourceStateName: string;
     isActive: boolean;
+    runtimeStatus: RuntimeStatus;
     onOpenDetail: (resource: DetailResourceRef) => void;
 }
 

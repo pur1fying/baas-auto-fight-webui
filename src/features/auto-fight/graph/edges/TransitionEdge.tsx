@@ -7,6 +7,10 @@ import type {EdgeProps} from '@xyflow/react';
 
 import type {TransitionFlowEdge} from '@/features/auto-fight/graph/flowTypes';
 
+export function getRuntimeEdgeClass(isPaused: boolean): string {
+    return `auto-fight-edge-runtime${isPaused ? ' is-paused' : ''}`;
+}
+
 export function TransitionEdge(props: EdgeProps<TransitionFlowEdge>) {
     const [path, labelX, labelY] = getBezierPath({
         sourceX: props.sourceX,
@@ -45,7 +49,11 @@ export function TransitionEdge(props: EdgeProps<TransitionFlowEdge>) {
                 interactionWidth={22}
             />
             {data.isActive ? (
-                <path d={path} className="auto-fight-edge-runtime" aria-hidden="true"/>
+                <path
+                    d={path}
+                    className={getRuntimeEdgeClass(data.runtimeStatus === 'paused')}
+                    aria-hidden="true"
+                />
             ) : null}
             <EdgeLabelRenderer>
                 <button

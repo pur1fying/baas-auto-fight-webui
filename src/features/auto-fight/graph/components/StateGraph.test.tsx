@@ -48,4 +48,5 @@ describe('StateGraph', () => {
         expect(activeNodeButton.closest('.auto-fight-state-node')).toHaveAttribute('data-runtime', 'active');
         expect(MOCK_WORKFLOW.startStateId).toBe('opening');
     });
+
 });

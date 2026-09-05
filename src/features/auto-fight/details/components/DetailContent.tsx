@@ -9,6 +9,7 @@ import {
     ConditionDetails,
     StateDetails,
     WorkflowDetails,
+    getDetailAnchorDomId,
 } from '@/features/auto-fight/details/renderers/StructuredDetails';
 
 interface DetailContentProps {
@@ -36,7 +37,13 @@ function StructuredContent({workflow, resource}: DetailContentProps) {
         case 'state':
             return workflow.states[resource.id] === undefined
                 ? null
-                : <StateDetails state={workflow.states[resource.id]} workflow={workflow}/>;
+                : (
+                    <StateDetails
+                        state={workflow.states[resource.id]}
+                        workflow={workflow}
+                        anchorId={resource.anchorId}
+                    />
+                );
         case 'action':
             return workflow.actions[resource.id] === undefined
                 ? null
@@ -54,7 +61,16 @@ export function DetailContent({workflow, resource}: DetailContentProps) {
 
     useEffect(() => {
         setView('structured');
-    }, [resource.kind, resource.id]);
+        const anchorId = resource.anchorId;
+        if (anchorId === undefined) {
+            return;
+        }
+        const frame = requestAnimationFrame(() => {
+            document.getElementById(getDetailAnchorDomId(anchorId))
+                ?.scrollIntoView?.({block: 'center'});
+        });
+        return () => cancelAnimationFrame(frame);
+    }, [resource]);
 
     return (
         <div className="auto-fight-detail-content">

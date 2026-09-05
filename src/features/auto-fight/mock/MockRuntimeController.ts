@@ -170,17 +170,20 @@ export class MockRuntimeController implements RuntimeEventSource {
         }
         this.emit(event);
 
-        if (this.status === 'playing') {
-            const nextDelay = this.reducedMotion && event.type === 'transition-selected'
-                ? 0
-                : undefined;
-            this.scheduleNext(nextDelay);
+        if (!keepPlaying && this.status === 'paused') {
+            this.emit({type: 'run-paused'});
+        }
+
+        if (this.reducedMotion && event.type === 'transition-selected') {
+            this.scheduleNext(0, keepPlaying);
+        } else if (this.status === 'playing') {
+            this.scheduleNext();
         }
     }
 
-    private scheduleNext(delayMs = this.baseDelayMs / this.speed): void {
+    private scheduleNext(delayMs = this.baseDelayMs / this.speed, keepPlaying = true): void {
         this.clearTimer();
-        this.timer = setTimeout(() => this.dispatchNext(true), delayMs);
+        this.timer = setTimeout(() => this.dispatchNext(keepPlaying), delayMs);
     }
 
     private clearTimer(): void {

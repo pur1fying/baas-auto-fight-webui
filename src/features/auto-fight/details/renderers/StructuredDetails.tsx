@@ -10,11 +10,21 @@ import type {
 interface FieldProps {
     label: string;
     children: React.ReactNode;
+    anchorId?: string;
+    isLocated?: boolean;
 }
 
-function Field({label, children}: FieldProps) {
+export function getDetailAnchorDomId(anchorId: string): string {
+    return `auto-fight-detail-${anchorId}`;
+}
+
+function Field({label, children, anchorId, isLocated = false}: FieldProps) {
     return (
-        <div className="auto-fight-detail-field">
+        <div
+            id={anchorId === undefined ? undefined : getDetailAnchorDomId(anchorId)}
+            className="auto-fight-detail-field"
+            data-located={isLocated ? 'true' : undefined}
+        >
             <Text as="div" className="auto-fight-detail-label">{label}</Text>
             <div>{children}</div>
         </div>
@@ -35,15 +45,29 @@ export function WorkflowDetails({workflow}: {workflow: WorkflowViewModel}) {
     );
 }
 
-export function StateDetails({state, workflow}: {state: StateViewModel; workflow: WorkflowViewModel}) {
+export function StateDetails({
+    state,
+    workflow,
+    anchorId,
+}: {
+    state: StateViewModel;
+    workflow: WorkflowViewModel;
+    anchorId?: string;
+}) {
     const action = state.actionId === undefined ? undefined : workflow.actions[state.actionId];
+    const actionFailAnchor = `${state.id}:action-fail:0`;
+    const defaultAnchor = `${state.id}:default:0`;
     return (
         <Stack direction="vertical" gap="normal">
             <Heading as="h2">{state.name}</Heading>
             <Text>{state.description}</Text>
             <Field label="State ID"><Text as="code">{state.id}</Text></Field>
             <Field label="Action">{action?.name ?? 'No action'}</Field>
-            <Field label="Action fail">
+            <Field
+                label="Action fail"
+                anchorId={actionFailAnchor}
+                isLocated={anchorId === actionFailAnchor}
+            >
                 {state.actionFailTransition === undefined
                     ? 'None'
                     : workflow.states[state.actionFailTransition]?.name ?? state.actionFailTransition}
@@ -62,7 +86,11 @@ export function StateDetails({state, workflow}: {state: StateViewModel; workflow
                     </Stack>
                 )}
             </Field>
-            <Field label="Default">
+            <Field
+                label="Default"
+                anchorId={defaultAnchor}
+                isLocated={anchorId === defaultAnchor}
+            >
                 {state.defaultTransition === undefined
                     ? 'None'
                     : workflow.states[state.defaultTransition]?.name ?? state.defaultTransition}

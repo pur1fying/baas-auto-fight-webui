@@ -85,6 +85,15 @@
     line-height: 1.55;
 }
 
+.auto-fight-detail-field[data-located='true'] {
+    margin: 0 -8px;
+    padding-right: 8px;
+    padding-left: 8px;
+    border-radius: 6px;
+    background: var(--bgColor-attention-muted);
+    box-shadow: inset 3px 0 0 var(--borderColor-attention-emphasis);
+}
+
 .auto-fight-detail-label {
     margin-bottom: 5px;
     color: var(--af-text-muted);

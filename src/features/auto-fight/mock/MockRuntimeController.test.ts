@@ -20,15 +20,22 @@ describe('MockRuntimeController', () => {
             ]));
     });
 
-    test('single-step emits exactly one event at a time', () => {
+    test('single-step emits one workflow event and synchronizes paused visuals', () => {
         const controller = new MockRuntimeController(MOCK_SCENARIOS[0], 1000);
         const received: RuntimeEvent[] = [];
         controller.subscribe((event) => received.push(event));
 
         controller.step();
+        expect(received.map((event) => event.type)).toEqual(['run-started', 'run-paused']);
+
         controller.step();
 
-        expect(received.map((event) => event.type)).toEqual(['run-started', 'transition-selected']);
+        expect(received.map((event) => event.type)).toEqual([
+            'run-started',
+            'run-paused',
+            'transition-selected',
+            'run-paused',
+        ]);
         expect(controller.getSnapshot().nextEventIndex).toBe(2);
     });
 
@@ -70,6 +77,25 @@ describe('MockRuntimeController', () => {
         expect(received.at(-1)?.type).toBe('transition-selected');
         vi.runOnlyPendingTimers();
         expect(received.at(-1)?.type).toBe('state-entered');
+        vi.useRealTimers();
+    });
+
+    test('reduced-motion single-step skips transition animation and pauses on the target', () => {
+        vi.useFakeTimers();
+        const controller = new MockRuntimeController(MOCK_SCENARIOS[0], 1000);
+        const received: RuntimeEvent[] = [];
+        controller.subscribe((event) => received.push(event));
+        controller.setReducedMotion(true);
+
+        controller.step();
+        controller.step();
+        vi.runOnlyPendingTimers();
+
+        expect(received.slice(-2).map((event) => event.type)).toEqual(['state-entered', 'run-paused']);
+        expect(controller.getSnapshot()).toEqual(expect.objectContaining({
+            nextEventIndex: 3,
+            status: 'paused',
+        }));
         vi.useRealTimers();
     });
 });

@@ -31,6 +31,7 @@ export function applyRuntimeOverlay(
             data: {
                 ...edge.data,
                 isActive: runtime.activeEdgeId === edge.id,
+                runtimeStatus: runtime.status,
             },
         })),
     };
@@ -95,6 +96,7 @@ export function createFlowElements(
             conditionId: edge.conditionId,
             sourceStateName: workflow.states[edge.source]?.name ?? edge.source,
             isActive: runtime.activeEdgeId === edge.id,
+            runtimeStatus: runtime.status,
             onOpenDetail,
         },
     }));

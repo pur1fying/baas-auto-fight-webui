@@ -30,5 +30,6 @@ describe('flow runtime overlay', () => {
         expect(updated.nodes.find((node) => node.id === 'opening')?.data.runtimeRole).toBe('active');
         expect(updated.nodes.find((node) => node.id === 'burst')?.data.runtimeRole).toBe('pending');
         expect(updated.edges.find((edge) => edge.id === 'opening:condition:0')?.data?.isActive).toBe(true);
+        expect(updated.edges.find((edge) => edge.id === 'opening:condition:0')?.data?.runtimeStatus).toBe('running');
     });
 });

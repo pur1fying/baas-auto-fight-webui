@@ -96,6 +96,11 @@
     border-style: dashed;
 }
 
+.auto-fight-state-node[data-runtime='active'][data-runtime-status='failed'] {
+    border-color: var(--af-fail);
+    box-shadow: 0 0 0 3px var(--af-fail-muted);
+}
+
 .auto-fight-node-header {
     height: 42px;
     display: flex;
@@ -341,6 +346,10 @@
     stroke-dasharray: 2 14;
     filter: drop-shadow(0 0 4px var(--af-runtime));
     animation: auto-fight-edge-flow 650ms linear infinite;
+}
+
+.auto-fight-edge-runtime.is-paused {
+    animation-play-state: paused;
 }
 
 @keyframes auto-fight-edge-flow {
