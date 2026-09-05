@@ -52,4 +52,19 @@ describe('runtimeReducer', () => {
         });
         expect(runtimeReducer(running, {type: 'run-reset'})).toEqual(INITIAL_RUNTIME_STATE);
     });
+
+    test('clears the live overlay when a Run completes', () => {
+        const completed = runtimeReducer({
+            status: 'running',
+            activeStateId: 'victory',
+            activeEdgeId: 'burst:condition:0',
+            pendingStateId: 'victory',
+            visitedStateIds: ['opening', 'burst'],
+        }, {type: 'run-completed', stateId: 'victory'});
+
+        expect(completed).toMatchObject({status: 'completed', visitedStateIds: ['opening', 'burst', 'victory']});
+        expect(completed.activeStateId).toBeUndefined();
+        expect(completed.activeEdgeId).toBeUndefined();
+        expect(completed.pendingStateId).toBeUndefined();
+    });
 });

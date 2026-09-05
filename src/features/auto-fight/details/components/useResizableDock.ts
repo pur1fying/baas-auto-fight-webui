@@ -15,6 +15,10 @@ function clampDockWidth(width: number): number {
 export function useResizableDock() {
     const [width, setWidth] = useState(DEFAULT_DOCK_WIDTH);
 
+    const onResizeBy = useCallback((delta: number) => {
+        setWidth((currentWidth) => clampDockWidth(currentWidth + delta));
+    }, []);
+
     const onResizeStart = useCallback((event: ReactPointerEvent<HTMLDivElement>) => {
         event.preventDefault();
         const startX = event.clientX;
@@ -33,5 +37,5 @@ export function useResizableDock() {
         window.addEventListener('pointerup', handlePointerUp);
     }, [width]);
 
-    return {width, onResizeStart};
+    return {width, onResizeBy, onResizeStart};
 }

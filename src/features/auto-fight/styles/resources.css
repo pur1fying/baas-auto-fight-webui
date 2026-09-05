@@ -1,0 +1,113 @@
+.auto-fight-resource-browser {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+}
+
+.auto-fight-resource-catalog {
+    min-width: 0;
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+}
+
+.auto-fight-resource-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.auto-fight-resource-header h2 {
+    font-size: 18px;
+}
+
+.auto-fight-resource-header p {
+    margin: 4px 0 0;
+    color: var(--fgColor-muted);
+}
+
+.auto-fight-resource-filters {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(140px, 220px);
+    gap: 10px;
+    margin: 18px 0 12px;
+}
+
+.auto-fight-resource-list {
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--borderColor-default);
+    border-radius: var(--borderRadius-large);
+    background: var(--bgColor-default);
+    list-style: none;
+}
+
+.auto-fight-resource-list li {
+    border-top: 1px solid var(--borderColor-muted);
+}
+
+.auto-fight-resource-list li:first-child {
+    border-top: 0;
+}
+
+.auto-fight-resource-row {
+    display: grid !important;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) auto minmax(72px, auto);
+    gap: 12px;
+    align-items: center;
+    padding: 12px !important;
+    text-align: left;
+}
+
+.auto-fight-resource-row-main {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.auto-fight-resource-row-main > span {
+    overflow: hidden;
+    color: var(--fgColor-muted);
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.auto-fight-resource-usage {
+    color: var(--fgColor-muted);
+    font-size: 12px;
+    text-align: right;
+}
+
+.auto-fight-resource-empty {
+    display: flex;
+    min-height: 260px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    border: 1px dashed var(--borderColor-default);
+    border-radius: var(--borderRadius-large);
+    color: var(--fgColor-muted);
+    text-align: center;
+}
+
+@media (max-width: 720px) {
+    .auto-fight-resource-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .auto-fight-resource-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .auto-fight-resource-usage {
+        display: none;
+    }
+}

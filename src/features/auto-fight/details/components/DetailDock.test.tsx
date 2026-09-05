@@ -27,14 +27,19 @@ describe('DetailDock', () => {
                 onClose={vi.fn()}
                 onPin={vi.fn()}
                 onCollapse={vi.fn()}
+                onResizeBy={vi.fn()}
                 onResizeStart={vi.fn()}
             />,
         );
 
         expect(screen.getByRole('heading', {name: '开场'})).toBeInTheDocument();
         expect(screen.getByText('启动战斗')).toBeInTheDocument();
+        expect(screen.getByRole('tab', {name: '开场'}))
+            .toHaveAttribute('aria-controls', 'auto-fight-detail-panel');
+        expect(screen.getByRole('tabpanel'))
+            .toHaveAttribute('aria-labelledby', 'auto-fight-detail-tab-state:opening');
 
-        await user.click(screen.getByRole('button', {name: '原始 JSON'}));
+        await user.click(screen.getByRole('button', {name: 'Raw JSON'}));
         expect(screen.getByText(/"actionFailTransition": "restart"/)).toBeInTheDocument();
     });
 
@@ -51,6 +56,7 @@ describe('DetailDock', () => {
                 onClose={onClose}
                 onPin={onPin}
                 onCollapse={vi.fn()}
+                onResizeBy={vi.fn()}
                 onResizeStart={vi.fn()}
             />,
         );
@@ -62,6 +68,35 @@ describe('DetailDock', () => {
         expect(onClose).toHaveBeenCalledWith('state:opening');
     });
 
+    test('makes the Dock separator keyboard and pointer discoverable', async () => {
+        const user = userEvent.setup();
+        const onResizeBy = vi.fn();
+        const onResizeStart = vi.fn();
+        render(
+            <DetailDock
+                workflow={MOCK_WORKFLOW}
+                tabsState={STATE_TAB}
+                width={420}
+                onActivate={vi.fn()}
+                onClose={vi.fn()}
+                onPin={vi.fn()}
+                onCollapse={vi.fn()}
+                onResizeBy={onResizeBy}
+                onResizeStart={onResizeStart}
+            />,
+        );
+
+        const separator = screen.getByRole('separator', {name: '调整详情面板宽度'});
+        expect(separator).toHaveAttribute('tabindex', '0');
+        expect(separator).toHaveAttribute('aria-valuenow', '420');
+
+        await user.click(separator);
+        await user.keyboard('{ArrowLeft}{ArrowRight}');
+
+        expect(onResizeBy).toHaveBeenNthCalledWith(1, 16);
+        expect(onResizeBy).toHaveBeenNthCalledWith(2, -16);
+    });
+
     test('locates a transition when a reused state tab receives an anchor', () => {
         const props = {
             workflow: MOCK_WORKFLOW,
@@ -70,6 +105,7 @@ describe('DetailDock', () => {
             onClose: vi.fn(),
             onPin: vi.fn(),
             onCollapse: vi.fn(),
+            onResizeBy: vi.fn(),
             onResizeStart: vi.fn(),
         };
         const {rerender} = render(<DetailDock {...props} tabsState={STATE_TAB}/>);
@@ -108,6 +144,7 @@ describe('DetailDock', () => {
             onClose: vi.fn(),
             onPin: vi.fn(),
             onCollapse: vi.fn(),
+            onResizeBy: vi.fn(),
             onResizeStart: vi.fn(),
         };
         const anchoredState: DetailTabsState = {
@@ -122,7 +159,7 @@ describe('DetailDock', () => {
         };
         const {rerender} = render(<DetailDock {...props} tabsState={anchoredState}/>);
         await waitFor(() => expect(scrollIntoView).toHaveBeenCalledTimes(1));
-        await user.click(screen.getByRole('button', {name: '原始 JSON'}));
+        await user.click(screen.getByRole('button', {name: 'Raw JSON'}));
         expect(screen.queryByRole('heading', {name: '开场'})).not.toBeInTheDocument();
 
         rerender(

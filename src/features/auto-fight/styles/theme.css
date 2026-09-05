@@ -1,24 +1,47 @@
-.auto-fight-workspace {
-    --af-canvas-bg: var(--bgColor-default);
-    --af-canvas-dots: var(--borderColor-muted);
-    --af-surface: var(--bgColor-muted);
-    --af-surface-raised: var(--bgColor-default);
-    --af-surface-hover: var(--bgColor-neutral-muted);
-    --af-border: var(--borderColor-default);
-    --af-border-strong: var(--borderColor-emphasis);
-    --af-text: var(--fgColor-default);
-    --af-text-muted: var(--fgColor-muted);
-    --af-condition: var(--fgColor-accent);
-    --af-condition-muted: var(--bgColor-accent-muted);
-    --af-default: var(--fgColor-muted);
-    --af-fail: var(--fgColor-danger);
-    --af-fail-muted: var(--bgColor-danger-muted);
-    --af-start: var(--fgColor-success);
-    --af-start-muted: var(--bgColor-success-muted);
-    --af-end: var(--fgColor-done);
-    --af-end-muted: var(--bgColor-done-muted);
-    --af-runtime: var(--borderColor-accent-emphasis);
-    --af-pending: var(--borderColor-attention-emphasis);
+.auto-fight-workspace,
+.auto-fight-resource-browser {
+    --auto-fight-canvas-bg: var(--bgColor-default);
+    --auto-fight-canvas-dots: var(--borderColor-muted);
+    --auto-fight-surface: var(--bgColor-muted);
+    --auto-fight-surface-raised: var(--bgColor-default);
+    --auto-fight-surface-hover: var(--bgColor-neutral-muted);
+    --auto-fight-node-border: var(--borderColor-default);
+    --auto-fight-node-border-strong: var(--borderColor-emphasis);
+    --auto-fight-text: var(--fgColor-default);
+    --auto-fight-text-muted: var(--fgColor-muted);
+    --auto-fight-condition: var(--fgColor-accent);
+    --auto-fight-condition-muted: var(--bgColor-accent-muted);
+    --auto-fight-default-transition: var(--fgColor-muted);
+    --auto-fight-error: var(--fgColor-danger);
+    --auto-fight-error-muted: var(--bgColor-danger-muted);
+    --auto-fight-start: var(--fgColor-success);
+    --auto-fight-start-muted: var(--bgColor-success-muted);
+    --auto-fight-end: var(--fgColor-done);
+    --auto-fight-end-muted: var(--bgColor-done-muted);
+    --auto-fight-running: var(--borderColor-accent-emphasis);
+    --auto-fight-pending: var(--borderColor-attention-emphasis);
+
+    /* Short aliases keep graph styles compact while all values remain centralized here. */
+    --af-canvas-bg: var(--auto-fight-canvas-bg);
+    --af-canvas-dots: var(--auto-fight-canvas-dots);
+    --af-surface: var(--auto-fight-surface);
+    --af-surface-raised: var(--auto-fight-surface-raised);
+    --af-surface-hover: var(--auto-fight-surface-hover);
+    --af-border: var(--auto-fight-node-border);
+    --af-border-strong: var(--auto-fight-node-border-strong);
+    --af-text: var(--auto-fight-text);
+    --af-text-muted: var(--auto-fight-text-muted);
+    --af-condition: var(--auto-fight-condition);
+    --af-condition-muted: var(--auto-fight-condition-muted);
+    --af-default: var(--auto-fight-default-transition);
+    --af-fail: var(--auto-fight-error);
+    --af-fail-muted: var(--auto-fight-error-muted);
+    --af-start: var(--auto-fight-start);
+    --af-start-muted: var(--auto-fight-start-muted);
+    --af-end: var(--auto-fight-end);
+    --af-end-muted: var(--auto-fight-end-muted);
+    --af-runtime: var(--auto-fight-running);
+    --af-pending: var(--auto-fight-pending);
     color: var(--af-text);
     background: var(--af-canvas-bg);
 }

@@ -7,13 +7,17 @@ import {
     MockRuntimeController,
 } from '@/features/auto-fight/mock/MockRuntimeController';
 import {
-    INITIAL_RUNTIME_STATE,
-    runtimeReducer,
-} from '@/features/auto-fight/graph/runtime/runtimeReducer';
+    createRuntimeObservationState,
+    runtimeObservationReducer,
+} from '@/features/auto-fight/runs/model/runtimeObservation';
 
 export function useMockRuntime() {
     const controller = useMemo(() => new MockRuntimeController(MOCK_SCENARIOS[0]), []);
-    const [runtimeState, dispatch] = useReducer(runtimeReducer, INITIAL_RUNTIME_STATE);
+    const [observation, dispatch] = useReducer(
+        runtimeObservationReducer,
+        'mock-live-run',
+        createRuntimeObservationState,
+    );
     const [controllerSnapshot, setControllerSnapshot] = useState(controller.getSnapshot());
 
     const refreshSnapshot = useCallback(() => {
@@ -70,7 +74,8 @@ export function useMockRuntime() {
     }, [controller, refreshSnapshot]);
 
     return {
-        runtimeState,
+        observation,
+        runtimeState: observation.visual,
         controllerSnapshot,
         scenarios: MOCK_SCENARIOS,
         selectScenario,

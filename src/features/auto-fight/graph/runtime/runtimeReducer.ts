@@ -48,7 +48,7 @@ export function runtimeReducer(
             return {
                 ...state,
                 status: 'completed',
-                activeStateId: event.stateId,
+                activeStateId: undefined,
                 activeEdgeId: undefined,
                 pendingStateId: undefined,
                 visitedStateIds: appendVisit(state.visitedStateIds, event.stateId),

@@ -23,6 +23,12 @@
     background: var(--bgColor-accent-muted);
 }
 
+.auto-fight-detail-resizer:focus-visible {
+    outline: 2px solid var(--focus-outlineColor, var(--borderColor-accent-emphasis));
+    outline-offset: -2px;
+    background: var(--bgColor-accent-muted);
+}
+
 .auto-fight-detail-tabs-row {
     min-height: 48px;
     display: flex;
@@ -52,6 +58,12 @@
 .auto-fight-preview-dot {
     color: var(--fgColor-muted);
     font-size: 7px;
+}
+
+.auto-fight-detail-panel {
+    min-height: 0;
+    flex: 1;
+    display: flex;
 }
 
 .auto-fight-detail-content {
@@ -110,6 +122,17 @@
     background: var(--af-surface);
 }
 
+.auto-fight-detail-usage {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auto-fight-detail-usage h2 {
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
 .auto-fight-json-block {
     min-height: 100%;
     margin: 0;
@@ -130,7 +153,7 @@
     .auto-fight-detail-dock {
         position: absolute;
         z-index: 15;
-        top: 64px;
+        top: 0;
         right: 0;
         bottom: 0;
         box-shadow: var(--shadow-floating-large, 0 8px 32px var(--borderColor-muted));

@@ -1,16 +1,18 @@
 import {fireEvent, render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import {describe, expect, test} from 'vitest';
+import {describe, expect, test, vi} from 'vitest';
 
-import {AppThemeProvider} from '@/components/theme/AppThemeProvider';
 import {AutoFightWorkspace} from '@/features/auto-fight/components/AutoFightWorkspace';
 import {MOCK_WORKFLOW} from '@/features/auto-fight/mock/mockWorkflow';
 
+vi.mock('next/navigation', () => ({
+    useRouter: () => ({push: vi.fn()}),
+    useSearchParams: () => new URLSearchParams(),
+}));
+
 function renderWorkspace() {
     return render(
-        <AppThemeProvider>
-            <AutoFightWorkspace workflow={MOCK_WORKFLOW}/>
-        </AppThemeProvider>,
+        <AutoFightWorkspace workflow={MOCK_WORKFLOW}/>,
     );
 }
 
@@ -32,17 +34,13 @@ describe('AutoFightWorkspace', () => {
         expect(screen.getByRole('heading', {name: '费用充足'})).toBeInTheDocument();
     });
 
-    test('single-step highlights the active state and then its selected edge', async () => {
-        const user = userEvent.setup();
+    test('owns only graph view controls', () => {
         renderWorkspace();
 
-        await user.click(screen.getByRole('button', {name: '单步'}));
-        const opening = await screen.findByRole('button', {name: '查看状态 开场'});
-        expect(opening.closest('.auto-fight-state-node')).toHaveAttribute('data-runtime', 'active');
-
-        await user.click(screen.getByRole('button', {name: '单步'}));
-        expect(opening.closest('.auto-fight-state-node')).toHaveAttribute('data-runtime', 'active');
-        expect(screen.getByText('Paused · 2/6')).toBeInTheDocument();
+        expect(screen.getByRole('button', {name: 'Left to right layout'})).toBeInTheDocument();
+        expect(screen.getByRole('button', {name: 'Top to bottom layout'})).toBeInTheDocument();
+        expect(screen.queryByText('Idle')).not.toBeInTheDocument();
+        expect(screen.queryByRole('button', {name: '单步'})).not.toBeInTheDocument();
     });
 
     test('resizes, collapses, and restores the detail dock', async () => {
@@ -59,7 +57,7 @@ describe('AutoFightWorkspace', () => {
 
         await user.click(screen.getByRole('button', {name: '折叠详情面板'}));
         expect(screen.queryByRole('complementary', {name: '工作流详情'})).not.toBeInTheDocument();
-        await user.click(screen.getByRole('button', {name: '展开详情面板'}));
+        await user.click(screen.getByRole('button', {name: 'Show details'}));
         expect(screen.getByRole('complementary', {name: '工作流详情'})).toBeInTheDocument();
     });
 });

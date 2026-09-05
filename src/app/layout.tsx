@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Suspense} from "react";
 
 import '@primer/css/dist/primer.css'
 import '@primer/primitives/dist/css/base/motion/motion.css'
@@ -17,7 +17,9 @@ export default function RootLayout({
         <html lang="zh-CN" suppressHydrationWarning>
         <body>
         <AppThemeProvider>
-            <NavigationLogger/>
+            <Suspense fallback={null}>
+                <NavigationLogger/>
+            </Suspense>
             <I18nProvider>
                 {children}
             </I18nProvider>

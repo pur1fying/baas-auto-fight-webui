@@ -398,4 +398,8 @@
         stroke-dasharray: none;
         animation: none;
     }
+
+    .auto-fight-workspace .react-flow__viewport {
+        transition: none !important;
+    }
 }
